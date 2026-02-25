@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AdvertisingAgency",
+    "name": "Routz & Beyond LLP",
+    "url": "https://www.routzandbeyond.com",
+    "logo": "https://www.routzandbeyond.com/logo.png",
+    "foundingDate": "2015",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mumbai",
+      "addressCountry": "IN"
+    },
+    "areaServed": ["India", "UAE"],
+    "sameAs": []
+  }
+  </script>
+
+  <meta name="title" content="Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE">
+  <meta name="description" content="Routz & Beyond LLP is a leading integrated media solutions company specializing in event sponsorship, media advertising, digital marketing, and influencer outreach in Mumbai and UAE.">
+  <meta name="keywords" content="Media Solutions Mumbai, Advertising Agency UAE, Event Sponsorship, Influencer Marketing, Media Planning and Buying, Retail Branding, Routz and Beyond">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Routz & Beyond">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.routzandbeyond.com/">
+  <meta property="og:title" content="Routz & Beyond | Your Journey to Success Starts Here">
+  <meta property="og:description" content="Specializing in pan-India and UAE media operations, assisting brands with integrated marketing strategies since 2015.">
+  <meta property="og:image" content="logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; scroll-behavior: smooth; }
+    body { background:white; color:#333; overflow-x:hidden; }
+
+    .menu-icon { position: fixed; top:20px; left:20px; width:30px; height:25px; cursor:pointer; z-index:1001; display:flex; flex-direction:column; justify-content:space-between; }
+    .menu-icon div { height:4px; background:white; border-radius:2px; transition:0.3s; }
+
+    .menu-overlay { position: fixed; top:0; left:-100%; width:250px; height:100%; background:#0d6efd; color:white; display:flex; flex-direction:column; padding:3rem 1rem; gap:1.5rem; transition:0.5s; z-index: 1000; }
+    .menu-overlay a { color:white; font-size:1.1rem; font-weight:600; text-decoration:none; transition:0.3s; }
+    .menu-overlay a:hover { color:#ffc107; padding-left: 10px; }
+
+    .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; opacity:1; transform:translateY(0);}
+    .logo-img { width:800px; max-width:90%; height: auto; }
+
+    .dynamic-header { position: fixed; top:0; left:0; width:100%; height:70px; background:#0d6efd; display:flex; align-items:center; justify-content:center; padding:0 2rem; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform:translateY(-100%); transition:0.4s ease; z-index:1002; }
+    .dynamic-header .header-h { color:white; font-size:1.5rem; font-weight:700; position:absolute; left:50%; transform:translateX(-50%); }
+
+    .tagline { margin-top:2rem; font-size:2.2rem; font-weight:700; color:#0d6efd; opacity:0; transform:translateY(20px); transition:opacity 0.8s ease, transform 0.8s ease; }
+    .tagline.show { opacity:1; transform:translateY(0); }
+    h1.hero-seo-title { font-size: 0.1px; color: transparent; position: absolute; }
+
+    .scroll-down { position:absolute; bottom:40px; display:flex; justify-content:center; width:100%; animation:bounce 2s infinite; cursor:pointer; }
+    .scroll-down span { display:block; width:20px; height:20px; border-bottom: 3px solid #0d6efd; border-right:3px solid #0d6efd; transform:rotate(45deg); margin:0 auto; }
+
+    section { padding:5rem 2rem; max-width:1200px; margin:0 auto; opacity:0; transform: translateY(20px); transition: 0.8s ease-out; }
+    section.visible { opacity:1; transform: translateY(0); }
+    h2 { text-align:center; margin-bottom:2.5rem; font-size:2.2rem; font-weight: 800; }
+
+    #about { text-align:center; max-width:900px; margin:0 auto; font-size:1rem; line-height:1.8; color:#555; }
+
+    /* UNIFIED HOVER EFFECTS FOR SERVICES & STRATEGY */
+    .services-container { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
+
+    .service-card, .process-step {
+        background: #f8fbff;
+        padding: 2.5rem 2rem;
+        flex: 1 1 280px;
+        max-width: 320px;
+        border-radius: 20px;
+        border: 1px solid #e1efff;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+    }
+
+    .service-card:hover, .process-step:hover {
+        transform: translateY(-12px) scale(1.03);
+        background: #fff;
+        box-shadow: 0 15px 30px rgba(13, 110, 253, 0.15);
+        border-color: #0d6efd;
+    }
+
+    .service-card h3 { color: #0d6efd; font-weight: 800; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.85rem; color: #666; font-weight: 500; }
+
+    /* R&B STRATEGY SPECIFIC */
+    .process-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+    .process-step { cursor: default; }
+    .process-step::after { content: '→'; position: absolute; right: -15px; top: 50%; transform: translateY(-50%); font-size: 1.8rem; color: #0d6efd; font-weight: bold; }
+    @media (max-width: 992px) { .process-step::after { display: none; } }
+    .process-step:last-child::after { display: none; }
+
+    .step-num { font-size: 3.5rem; font-weight: 800; opacity: 0.1; position: absolute; top: 10px; left: 20px; color: #0d6efd; transition: all 0.4s ease; }
+    .process-step:hover .step-num { opacity: 0.3; transform: scale(1.1); }
+    .process-step h3 { position: relative; z-index: 2; }
+    .process-step p { font-weight: 600; }
+
+    /* ENDLESS CLIENT SLIDER - LARGER & SLOWER */
+    .clients-slider { overflow:hidden; margin:3rem 0; padding:2rem 0; position: relative; width: 100%; }
+    .clients-track { display:flex; width: fit-content; animation: scrollClients 45s linear infinite; } /* Slower speed: 45s */
+    .clients-track:hover { animation-play-state: paused; }
+
+    .logo-container { position:relative; display:flex; justify-content:center; align-items:center; margin-right:5rem; width: 220px; height: 110px; }
+    .logo-container img { width:220px; height:110px; object-fit:contain; transition: all 0.4s ease; }
+
+    .hover-color { position:absolute; top:0; left:0; opacity:0; }
+    .logo-container:hover .hover-color { opacity:1; }
+    .logo-container:hover .gray-logo { opacity:0; }
+
+    @keyframes scrollClients {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .progress-container { display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; }
+    .progress-card { flex:1 1 200px; background:#f5f5f5; border-radius:10px; padding:2rem; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+    .progress-card h3 { font-size:3rem; color:#0d6efd; margin-bottom:1rem; font-weight:600; }
+
+    /* OVERLAY SYSTEM */
+    .service-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.98); color:#333; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; transform: scale(0.9); opacity:0; visibility: hidden; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index:2000; overflow-y: auto; }
+    .service-overlay.active { transform: scale(1); opacity:1; visibility: visible; }
+    .service-overlay .close-btn { position:fixed; top:20px; right:20px; background:#0d6efd; color:white; border:none; border-radius:50%; width:45px; height:45px; font-size:1.5rem; cursor:pointer; z-index: 2001; }
+
+    #serviceContent { max-width: 900px; width: 100%; }
+
+    /* SLIDESHOW STYLES */
+    .slideshow-container { position: relative; width: 100%; max-width: 750px; margin: 2rem auto; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #fafafa; }
+    .slides-wrapper { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .slides-wrapper img { width: 100%; flex-shrink: 0; object-fit: contain; height: 450px; }
+    .slide-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(13, 110, 253, 0.8); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; font-size: 1.2rem; }
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+
+    /* CONTACT FORM FIXES */
+    #contact form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
+    #contact input, #contact select, #contact textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Montserrat', sans-serif; background: #fff; }
+    #contact input:focus, #contact textarea:focus { border-color: #0d6efd; outline: none; box-shadow: 0 0 5px rgba(13, 110, 253, 0.2); }
+    .phone-group { display: flex; gap: 10px; }
+    .phone-group select { flex: 0 0 100px; }
+    .phone-group input { flex: 1; }
+    #contact button { background: #0d6efd; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+    #contact button:hover { background: #0056b3; transform: translateY(-2px); }
+
+    footer { text-align:center; padding:2rem; background:#f5f5f5; color:#333; margin-top:2rem; }
+
+    @media(max-width:768px){ .services-container { flex-direction:column; align-items:center; } .slides-wrapper img { height: 300px; } .phone-group { flex-direction: column; } .phone-group select { flex: 1; } .logo-container { width:160px; height:80px; margin-right:3rem; } .logo-container img { width:160px; height:80px; } }
+  </style>
+</head>
+<body>
+
+    <div class="dynamic-header" id="dynamicHeader">
+      <div class="header-h">ROUTZ & BEYOND</div>
+      <div class="menu-icon" onclick="toggleMenu(this)">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <a href="#about" onclick="closeMenu()">About Us</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#strategy" onclick="closeMenu()">Our Strategy</a>
+      <a href="#why" onclick="closeMenu()">Partners</a>
+      <a href="#progress" onclick="closeMenu()">Our Progress</a>
+      <a href="#contact" onclick="closeMenu()">Request a Plan</a>
+    </div>
+
+    <section class="hero">
+      <img src="logo.png" alt="Routz & Beyond Logo" class="logo-img">
+      <div class="tagline" id="tagline">Your journey to success starts here</div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Routz and Beyond LLP: Incepted in 2015, R&B is an integrated media solutions company driven by experienced professionals in the field of Media & Advertising. Headquartered in Mumbai, we handle pan India operations with the strong support of our strategic business partners located in various cities.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-card" onclick="openService('sponsorship')"><h3>Event Sponsorship</h3><p>Connecting brands to premium events.</p></div>
+        <div class="service-card" onclick="openService('media')"><h3>Media Advertising</h3><p>Multi-channel advertising reach.</p></div>
+        <div class="service-card" onclick="openService('print')"><h3>Print Advertising</h3><p>High-impact newspaper & magazine ads.</p></div>
+        <div class="service-card" onclick="openService('events')"><h3>Events</h3><p>Corporate events & ground activations.</p></div>
+        <div class="service-card" onclick="openService('digital')"><h3>Digital Marketing</h3><p>SEO, SEM, and Performance marketing.</p></div>
+        <div class="service-card" onclick="openService('integrated')"><h3>Integrated Solutions</h3><p>360-degree marketing ecosystem.</p></div>
+        <div class="service-card" onclick="openService('retail')"><h3>Retail Branding</h3><p>In-shop displays and signage.</p></div>
+        <div class="service-card" onclick="openService('direct')"><h3>Direct Marketing</h3><p>Database marketing & direct mail.</p></div>
+        <div class="service-card" onclick="openService('influencers')"><h3>Influencer Marketing</h3><p>Social media outreach & PR.</p></div>
+        <div class="service-card" onclick="openService('film')"><h3>In-Film Placement</h3><p>Product placement in cinema.</p></div>
+        <div class="service-card" onclick="openService('planning')"><h3>Media Planning</h3><p>Strategic media buying & ROI.</p></div>
+        <div class="service-card" onclick="openService('live_events')"><h3>Live Events</h3><p>Concerts and large scale festivals.</p></div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <h2>The R&B Strategy</h2>
+      <div class="process-wrapper">
+        <div class="process-step"><div class="step-num">01</div><h3>Audit</h3><p>Deep-dive market research in Mumbai and UAE landscapes.</p></div>
+        <div class="process-step"><div class="step-num">02</div><h3>Media Mix</h3><p>Optimizing budget across Digital, Print, and OOH assets.</p></div>
+        <div class="process-step"><div class="step-num">03</div><h3>Deploy</h3><p>Flawless execution with real-time on-ground support.</p></div>
+        <div class="process-step"><div class="step-num">04</div><h3>Scale</h3><p>Measuring performance metrics to maximize your ROI.</p></div>
+      </div>
+    </section>
+
+    <div id="serviceOverlay" class="service-overlay">
+      <button class="close-btn" onclick="closeService()">×</button>
+      <div id="serviceContent"></div>
+    </div>
+
+    <section id="why">
+      <h2>Our Partners</h2>
+      <div class="clients-slider">
+        <div class="clients-track">
+          <div class="logo-container"><img src="colgate.png" class="gray-logo"><img src="colgate1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="HSBC.png" class="gray-logo"><img src="HSBC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="HDFC.png" class="gray-logo"><img src="HDFC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="IDFC.png" class="gray-logo"><img src="IDFC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="wipro.png" class="gray-logo"><img src="wipro1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="castrol.png" class="gray-logo"><img src="castrol1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="loreal.png" class="gray-logo"><img src="loreal1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="citi.png" class="gray-logo"><img src="citi1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="suzuki.png" class="gray-logo"><img src="suzuki1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="colgate.png" class="gray-logo"><img src="colgate1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="HSBC.png" class="gray-logo"><img src="HSBC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="HDFC.png" class="gray-logo"><img src="HDFC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="IDFC.png" class="gray-logo"><img src="IDFC1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="wipro.png" class="gray-logo"><img src="wipro1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="castrol.png" class="gray-logo"><img src="castrol1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="loreal.png" class="gray-logo"><img src="loreal1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="citi.png" class="gray-logo"><img src="citi1.png" class="hover-color"></div>
+          <div class="logo-container"><img src="suzuki.png" class="gray-logo"><img src="suzuki1.png" class="hover-color"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="progress">
+      <h2>Our Progress</h2>
+      <div class="progress-container">
+        <div class="progress-card"><h3 class="counter" data-target="10">0</h3><p>Years of Experience</p></div>
+        <div class="progress-card"><h3 class="counter" data-target="50">0</h3><p>Campaigns Delivered</p></div>
+        <div class="progress-card"><h3 class="counter" data-target="110000000">0</h3><p>Digital Impressions</p></div>
+        <div class="progress-card"><h3 class="counter" data-target="50">0</h3><p>Global Clients</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Request a Media Plan</h2>
+      <form action="https://formspree.io/f/xpqakygn" method="POST">
+        <input type="text" name="name" placeholder="Full Name / Company Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <div class="phone-group">
+          <select name="code"><option>+91</option><option>+971</option></select>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+        </div>
+        <textarea name="message" rows="4" placeholder="Tell us about your brand goals..."></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+
+    <footer><p>&copy; 2026 Routz & Beyond. Integrated Media Solutions.</p></footer>
+
+    <script>
+      // Navigation Logic
+      const overlay = document.getElementById('menuOverlay');
+      const menuIcon = document.querySelector('.menu-icon');
+      function toggleMenu(el){
+        const isOpen = overlay.style.left === "0px";
+        overlay.style.left = isOpen ? "-100%" : "0px";
+        el.classList.toggle("open");
+      }
+      function closeMenu(){
+        overlay.style.left="-100%";
+        menuIcon.classList.remove("open");
+      }
+
+      // SERVICE DATABASE
+      const serviceDetails = {
+        sponsorship: {
+          title: "Event Sponsorship",
+          text: "We identify high-value sponsorship opportunities that align with your brand's core values, ensuring maximum audience engagement in Mumbai and UAE markets.",
+          images: ["sponsorship1.jpg", "sponsorship2.jpg", "sponsorship3.png", "sponsorship4.png", "sponsorship5.png"]
+        },
+        media: {
+          title: "Media Advertising",
+          text: "Comprehensive advertising across TV, Radio, and Digital channels. We handle everything from creative conceptualization to performance tracking.",
+          images: ["media1.jpg", "media2.jpg", "media3.jpg", "media4.jpg"]
+        },
+        print: { title: "Print Advertising", text: "Tactical placement in leading dailies and lifestyle magazines with high-impact layouts." },
+        events: { title: "Events & Ground Activation", text: "From corporate launches to BTL activations, we bring brands to life through direct interaction." },
+        digital: { title: "Digital Marketing", text: "Data-driven growth focusing on SEO, SEM, and Performance marketing strategies." },
+        integrated: { title: "Integrated Media Solutions", text: "A 360-degree marketing approach syncing digital, print, and outdoor presence." },
+        retail: { title: "Retail & In-Shop Branding", text: "Premium window displays and signage that drive walk-ins and conversions." },
+        direct: { title: "Direct Marketing", text: "Personalized communication strategies utilizing database marketing and direct outreach." },
+        influencers: { title: "Influencer Marketing", text: "Collaborating with top-tier influencers in India and UAE for authentic brand advocacy." },
+        film: { title: "In-Film Product Placement", text: "Seamless integration of products into Bollywood and regional cinema." },
+        planning: { title: "Media Planning & Buying", text: "Maximizing ROI through intelligent data and competitive rate negotiation." },
+        live_events: { title: "Live Events & Concerts", text: "Managing large-scale live productions, talent, and promotions." }
+      };
+
+      let currentSlideIndex = 0;
+      let slideInterval;
+
+      function openService(key) {
+        const service = serviceDetails[key] || {title: "Expertise", text: "Professional media solutions."};
+        let contentHtml = `<h2>${service.title}</h2><p>${service.text}</p>`;
+
+        if (service.images) {
+          currentSlideIndex = 0;
+          contentHtml += `
+            <div class="slideshow-container">
+              <button class="slide-arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="slide-arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
+              <div class="slides-wrapper" id="slidesWrapper">
+                ${service.images.map(img => `<img src="${img}" alt="${service.title}" onerror="this.src='https://via.placeholder.com/800x450?text=Service+Image'">`).join('')}
+              </div>
+            </div>`;
+        }
+
+        document.getElementById('serviceContent').innerHTML = contentHtml;
+        document.getElementById('serviceOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        if (service.images) startSlideshow();
+      }
+
+      function moveSlide(step) {
+        const wrapper = document.getElementById('slidesWrapper');
+        if (!wrapper) return;
+        const totalSlides = wrapper.querySelectorAll('img').length;
+        currentSlideIndex = (currentSlideIndex + step + totalSlides) % totalSlides;
+        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+      }
+
+      function startSlideshow() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => moveSlide(1), 4000);
+      }
+
+      function closeService() {
+        document.getElementById('serviceOverlay').classList.remove('active');
+        document.body.style.overflow = 'auto';
+        clearInterval(slideInterval);
+      }
+
+      const sections = document.querySelectorAll('section');
+      const counters = document.querySelectorAll('.counter');
+      let counterStarted = false;
+
+      window.addEventListener('scroll', () => {
+        sections.forEach(sec => {
+          if(sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('visible');
+        });
+
+        const ps = document.getElementById('progress');
+        if(ps && ps.getBoundingClientRect().top < window.innerHeight - 100 && !counterStarted){
+          counters.forEach(c => {
+            const target = +c.getAttribute('data-target');
+            let count = 0;
+            const update = () => {
+              count += target / 80;
+              if(count < target){
+                c.innerText = target >= 1000000 ? Math.floor(count/1000000)+'M+' : Math.floor(count)+'+';
+                requestAnimationFrame(update);
+              } else {
+                c.innerText = target >= 1000000 ? Math.floor(target/1000000)+'M+' : target+'+';
+              }
+            }
+            update();
+          });
+          counterStarted = true;
+        }
+
+        if(window.scrollY > 100) document.getElementById('dynamicHeader').style.transform = "translateY(0)";
+        else document.getElementById('dynamicHeader').style.transform = "translateY(-100%)";
+      });
+
+      window.addEventListener('load', () => {
+        document.getElementById('tagline').classList.add('show');
+      });
+    </script>
+</body>
+</html>
