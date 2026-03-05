@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Routz & Beyond | Integrated Media & Advertising Solutions India & UAE</title>
+  <title>Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE</title>
 
   <script type="application/ld+json">
   {
@@ -24,9 +24,9 @@
   }
   </script>
 
-  <meta name="title" content="Routz & Beyond | Integrated Media & Advertising Solutions India & UAE">
+  <meta name="title" content="Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE">
   <meta name="description" content="Routz & Beyond LLP is a leading integrated media solutions company specializing in event sponsorship, media advertising, digital marketing, and influencer outreach in Mumbai and UAE.">
-  <meta name="keywords" content="Media Solutions Mumbai, Media Solutions India, Advertising Agency UAE, Event Sponsorship, Influencer Marketing, Media Planning and Buying, Retail Branding, Routz and Beyond">
+  <meta name="keywords" content="Media Solutions Mumbai, Advertising Agency UAE, Event Sponsorship, Influencer Marketing, Media Planning and Buying, Retail Branding, Routz and Beyond">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Routz & Beyond">
 
@@ -50,7 +50,67 @@
 
     .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; opacity:1; transform:translateY(0);}
     .logo-img { width:800px; max-width:90%; height: auto; }
+    .hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
 
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1; /* behind everything */
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10; /* logo & tagline in front of video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-img {
+  width: 800px;
+  max-width: 90%;
+  height: auto;
+}
+
+.tagline {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d6efd;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tagline.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
     .dynamic-header { position: fixed; top:0; left:0; width:100%; height:70px; background:#0d6efd; display:flex; align-items:center; justify-content:center; padding:0 2rem; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform:translateY(-100%); transition:0.4s ease; z-index:1002; }
     .dynamic-header .header-h { color:white; font-size:1.5rem; font-weight:700; position:absolute; left:50%; transform:translateX(-50%); }
 
@@ -67,7 +127,6 @@
 
     #about { text-align:center; max-width:900px; margin:0 auto; font-size:1rem; line-height:1.8; color:#555; }
 
-    /* UNIFIED HOVER EFFECTS FOR SERVICES & STRATEGY */
     .services-container { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
 
     .service-card, .process-step {
@@ -93,7 +152,6 @@
     .service-card h3 { color: #0d6efd; font-weight: 800; margin-bottom: 0.5rem; }
     .service-card p { font-size: 0.85rem; color: #666; font-weight: 500; }
 
-    /* R&B STRATEGY SPECIFIC */
     .process-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
     .process-step { cursor: default; }
     .process-step::after { content: '→'; position: absolute; right: -15px; top: 50%; transform: translateY(-50%); font-size: 1.8rem; color: #0d6efd; font-weight: bold; }
@@ -105,9 +163,8 @@
     .process-step h3 { position: relative; z-index: 2; }
     .process-step p { font-weight: 600; }
 
-    /* ENDLESS CLIENT SLIDER - LARGER & SLOWER */
     .clients-slider { overflow:hidden; margin:3rem 0; padding:2rem 0; position: relative; width: 100%; }
-    .clients-track { display:flex; width: fit-content; animation: scrollClients 45s linear infinite; } /* Slower speed: 45s */
+    .clients-track { display:flex; width: fit-content; animation: scrollClients 45s linear infinite; }
     .clients-track:hover { animation-play-state: paused; }
 
     .logo-container { position:relative; display:flex; justify-content:center; align-items:center; margin-right:5rem; width: 220px; height: 110px; }
@@ -126,14 +183,12 @@
     .progress-card { flex:1 1 200px; background:#f5f5f5; border-radius:10px; padding:2rem; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-align: center; }
     .progress-card h3 { font-size:3rem; color:#0d6efd; margin-bottom:1rem; font-weight:600; }
 
-    /* OVERLAY SYSTEM */
     .service-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.98); color:#333; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; transform: scale(0.9); opacity:0; visibility: hidden; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index:2000; overflow-y: auto; }
     .service-overlay.active { transform: scale(1); opacity:1; visibility: visible; }
     .service-overlay .close-btn { position:fixed; top:20px; right:20px; background:#0d6efd; color:white; border:none; border-radius:50%; width:45px; height:45px; font-size:1.5rem; cursor:pointer; z-index: 2001; }
 
     #serviceContent { max-width: 900px; width: 100%; }
 
-    /* SLIDESHOW STYLES */
     .slideshow-container { position: relative; width: 100%; max-width: 750px; margin: 2rem auto; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #fafafa; }
     .slides-wrapper { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .slides-wrapper img { width: 100%; flex-shrink: 0; object-fit: contain; height: 450px; }
@@ -141,7 +196,6 @@
     .arrow-left { left: 10px; }
     .arrow-right { right: 10px; }
 
-    /* CONTACT FORM FIXES */
     #contact form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
     #contact input, #contact select, #contact textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Montserrat', sans-serif; background: #fff; }
     #contact input:focus, #contact textarea:focus { border-color: #0d6efd; outline: none; box-shadow: 0 0 5px rgba(13, 110, 253, 0.2); }
@@ -174,10 +228,22 @@
       <a href="#contact" onclick="closeMenu()">Request a Plan</a>
     </div>
 
-    <section class="hero">
-      <img src="logo.png" alt="Routz & Beyond Logo" class="logo-img">
-      <div class="tagline" id="tagline">Your journey to success starts here</div>
-    </section>
+<section class="hero">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src=".mp4" type="video/mp4">
+  </video>
+
+  <!-- Logo + Text -->
+  <div class="hero-content">
+    <img src="logo.png" alt="Routz & Beyond Logo" class="logo-img">
+    <div class="tagline" id="tagline">
+      Your journey to success starts here
+    </div>
+  </div>
+
+</section>
 
     <section id="about">
       <h2>About Us</h2>
@@ -187,19 +253,42 @@
     <section id="services">
       <h2>Our Services</h2>
       <div class="services-container">
-        <div class="service-card" onclick="openService('sponsorship')"><h3>Event Sponsorship</h3><p>Connecting brands to premium events.</p></div>
-        <div class="service-card" onclick="openService('media')"><h3>Media Advertising</h3><p>Multi-channel advertising reach.</p></div>
-        <div class="service-card" onclick="openService('print')"><h3>Print Advertising</h3><p>High-impact newspaper & magazine ads.</p></div>
-        <div class="service-card" onclick="openService('events')"><h3>Events</h3><p>Corporate events & ground activations.</p></div>
-        <div class="service-card" onclick="openService('digital')"><h3>Digital Marketing</h3><p>SEO, SEM, and Performance marketing.</p></div>
-        <div class="service-card" onclick="openService('integrated')"><h3>Integrated Solutions</h3><p>360-degree marketing ecosystem.</p></div>
-        <div class="service-card" onclick="openService('retail')"><h3>Retail Branding</h3><p>In-shop displays and signage.</p></div>
-        <div class="service-card" onclick="openService('direct')"><h3>Direct Marketing</h3><p>Database marketing & direct mail.</p></div>
-        <div class="service-card" onclick="openService('influencers')"><h3>Influencer Marketing</h3><p>Social media outreach & PR.</p></div>
-        <div class="service-card" onclick="openService('film')"><h3>In-Film Placement</h3><p>Product placement in cinema.</p></div>
-        <div class="service-card" onclick="openService('planning')"><h3>Media Planning</h3><p>Strategic media buying & ROI.</p></div>
-        <div class="service-card" onclick="openService('live_events')"><h3>Live Events</h3><p>Concerts and large scale festivals.</p></div>
-      </div>
+        <div class="service-card" onclick="openService('sponsorship')">
+            <img src="eventsponsorship.png" alt="Event Sponsorship" style="width:100%; height:auto; border-radius:20px;">
+                </div>
+<div class="service-card" onclick="openService('media')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="mediaadvertising.png" alt="Media Advertising" style="width:auto; height:240px; object-fit:cover; border-radius:20px;">
+</div>
+ <div class="service-card" onclick="openService('print')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="printmedia.png" alt="Print Advertising" style="width:auto; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('events')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="events.png" alt="Events" style="width:auto; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('digital')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="digital marketing.jpg" alt="Digital Marketing" style="width:auto; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('integrated')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="ooh.png" alt="OOH and Retail Branding" style="width:auto; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('retail')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="retail.png" alt="Retail Branding" style="width:260px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('direct')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="directmarketing.png" alt="Direct Marketing" style="width:260px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('influencers')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="influencermarketing.png" alt="Influencer Marketing" style="width:250px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('film')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="infilm.png" alt="In-Film Placement" style="width:250px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('planning')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="mediaplanning.png" alt="Media Planning" style="width:250px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
+        <div class="service-card" onclick="openService('live_events')" style="display:flex; justify-content:center; align-items:center; padding:1rem;">
+  <img src="live.png" alt="Live Events" style="width:250px; height:220px; object-fit:cover; border-radius:20px;">
+</div>
     </section>
 
     <section id="strategy">
@@ -253,6 +342,83 @@
       </div>
     </section>
 
+<section id="signage-map">
+  <h2>Signage Locations Across India</h2>
+  <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1rem; color:#555;">
+    Hover over the circles to see the number of signages at that location.
+  </p>
+  <div id="map-circles" style="width:100%; height:600px; border-radius:12px; margin:2rem auto; max-width:1200px;"></div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+  /* Pulsing circle style */
+  .blip-circle {
+    width: 20px;
+    height: 20px;
+    background: #0d6efd;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 rgba(13, 110, 253, 0.7);
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 rgba(13,110,253,0.7);}
+    50% { transform: scale(1.3); box-shadow: 0 0 15px rgba(13,110,253,0.7);}
+    100% { transform: scale(0.9); box-shadow: 0 0 0 rgba(13,110,253,0.7);}
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize map
+  const map = L.map('map-circles').setView([20.5937, 78.9629], 5);
+
+  // OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+
+  // Locations with random numbers
+  const signageLocations = [
+    { coords: [19.0760, 72.8777], city: "Mumbai" },
+    { coords: [18.5204, 73.8567], city: "Pune" },
+    { coords: [28.6139, 77.2090], city: "Delhi" },
+    { coords: [12.9716, 77.5946], city: "Bangalore" },
+    { coords: [13.0827, 80.2707], city: "Chennai" },
+    { coords: [22.5726, 88.3639], city: "Kolkata" },
+    { coords: [23.0225, 72.5714], city: "Ahmedabad" },
+    { coords: [19.2183, 72.9781], city: "Thane" },
+    { coords: [17.3850, 78.4867], city: "Hyderabad" },
+    { coords: [26.9124, 75.7873], city: "Jaipur" },
+  ];
+
+  signageLocations.forEach(loc => {
+    const numSignages = Math.floor(Math.random() * 50) + 1; // Random number
+
+    // Create a pulsing divIcon
+    const blipIcon = L.divIcon({
+      className: '',        // IMPORTANT: leave className blank here
+      html: `<div class="blip-circle"></div>`,
+      iconSize: [20, 20],
+      iconAnchor: [10, 10]  // CENTER the icon over the lat/lng
+    });
+
+    const marker = L.marker(loc.coords, { icon: blipIcon }).addTo(map);
+
+    marker.bindTooltip(`${loc.city}: ${numSignages} signages`, {
+      permanent: false,
+      direction: 'top'
+    });
+
+    marker.on('mouseover', function(){ this.openTooltip(); });
+    marker.on('mouseout', function(){ this.closeTooltip(); });
+  });
+});
+</script>
     <section id="contact">
       <h2>Request a Media Plan</h2>
       <form action="https://formspree.io/f/xpqakygn" method="POST">
@@ -269,125 +435,270 @@
 
     <footer><p>&copy; 2026 Routz & Beyond. Integrated Media Solutions.</p></footer>
 
-    <script>
-      // Navigation Logic
-      const overlay = document.getElementById('menuOverlay');
-      const menuIcon = document.querySelector('.menu-icon');
-      function toggleMenu(el){
-        const isOpen = overlay.style.left === "0px";
-        overlay.style.left = isOpen ? "-100%" : "0px";
-        el.classList.toggle("open");
-      }
-      function closeMenu(){
-        overlay.style.left="-100%";
-        menuIcon.classList.remove("open");
-      }
+<script>
+const overlay = document.getElementById('menuOverlay');
+const menuIcon = document.querySelector('.menu-icon');
 
-      // SERVICE DATABASE
-      const serviceDetails = {
-        sponsorship: {
-          title: "Event Sponsorship",
-          text: "We identify high-value sponsorship opportunities that align with your brand's core values, ensuring maximum audience engagement in Mumbai and UAE markets.",
-          images: ["sponsorship1.jpg", "sponsorship2.jpg", "sponsorship3.png", "sponsorship4.png", "sponsorship5.png"]
-        },
-        media: {
-          title: "Media Advertising",
-          text: "Comprehensive advertising across TV, Radio, and Digital channels. We handle everything from creative conceptualization to performance tracking.",
-          images: ["media1.jpg", "media2.jpg", "media3.jpg", "media4.jpg"]
-        },
-        print: { title: "Print Advertising", text: "Tactical placement in leading dailies and lifestyle magazines with high-impact layouts." },
-        events: { title: "Events & Ground Activation", text: "From corporate launches to BTL activations, we bring brands to life through direct interaction." },
-        digital: { title: "Digital Marketing", text: "Data-driven growth focusing on SEO, SEM, and Performance marketing strategies." },
-        integrated: { title: "Integrated Media Solutions", text: "A 360-degree marketing approach syncing digital, print, and outdoor presence." },
-        retail: { title: "Retail & In-Shop Branding", text: "Premium window displays and signage that drive walk-ins and conversions." },
-        direct: { title: "Direct Marketing", text: "Personalized communication strategies utilizing database marketing and direct outreach." },
-        influencers: { title: "Influencer Marketing", text: "Collaborating with top-tier influencers in India and UAE for authentic brand advocacy." },
-        film: { title: "In-Film Product Placement", text: "Seamless integration of products into Bollywood and regional cinema." },
-        planning: { title: "Media Planning & Buying", text: "Maximizing ROI through intelligent data and competitive rate negotiation." },
-        live_events: { title: "Live Events & Concerts", text: "Managing large-scale live productions, talent, and promotions." }
+function toggleMenu(el){
+  const isOpen = overlay.style.left === "0px";
+  overlay.style.left = isOpen ? "-100%" : "0px";
+  el.classList.toggle("open");
+}
+
+function closeMenu(){
+  overlay.style.left="-100%";
+  menuIcon.classList.remove("open");
+}
+
+// Updated serviceDetails with spacing between bullet points
+const serviceDetails = {
+  sponsorship: {
+    title: "Event Sponsorship",
+
+    images: ["sponsorship1.jpg", "sponsorship2.jpg", "sponsorship3.png", "sponsorship4.png", "sponsorship5.png"]
+ },
+  media: {
+    title: "Media Advertising",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>TV, Radio, Print, and Digital campaign management.</li>
+      <li>Creative conceptualization and production support.</li>
+      <li>Targeted audience engagement and segmentation.</li>
+      <li>Track ad performance and optimize campaigns.</li>
+      <li>Access premium media networks for enhanced reach.</li>
+    </ul>`,
+    images: null
+  },
+  print: {
+    title: "Print Advertising",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>High-impact ad placement in leading dailies.</li>
+      <li>Feature spreads in lifestyle and industry magazines.</li>
+      <li>Custom ad designs optimized for print.</li>
+      <li>Distribution targeting premium readership demographics.</li>
+      <li>Performance tracking for print ROI insights.</li>
+    </ul>`
+  },
+  events: {
+    title: "Events & Ground Activation",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Corporate launches and product activation events.</li>
+      <li>Interactive experiences for brand awareness.</li>
+      <li>On-ground promotions and live engagement.</li>
+      <li>Event logistics, staffing, and coordination.</li>
+      <li>Post-event reporting and customer feedback analysis.</li>
+    </ul>`
+  },
+  digital: {
+    title: "Digital Marketing",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>SEO optimization for better search rankings.</li>
+      <li>SEM campaigns with precise targeting.</li>
+      <li>Social media content creation & management.</li>
+      <li>Performance marketing and conversion tracking.</li>
+      <li>Email marketing and lead nurturing campaigns.</li>
+    </ul>`
+  },
+  integrated: {
+    title: "OOH and Media Solutions",
+    text: `<ul style="list-style-position: inside; font-size:2rem; font-weight:800; display:flex; flex-direction:column; gap:1.5rem;">
+      <li style="opacity:0; transform: translateY(20px); animation: slideIn 0.5s forwards; animation-delay: 0.1s;">Taxi Advertising</li>
+      <li style="opacity:0; transform: translateY(20px); animation: slideIn 0.5s forwards; animation-delay: 0.3s;">Bus Advertising</li>
+      <li style="opacity:0; transform: translateY(20px); animation: slideIn 0.5s forwards; animation-delay: 0.5s;">DOOH (Digital Out Of Home)</li>
+      <li style="opacity:0; transform: translateY(20px); animation: slideIn 0.5s forwards; animation-delay: 0.7s;">Airport Advertising</li>
+      <li style="opacity:0; transform: translateY(20px); animation: slideIn 0.5s forwards; animation-delay: 0.9s;">Billboards & Signages</li>
+    </ul>`
+  },
+  retail: {
+    title: "Retail & In-Shop Branding",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Window displays that attract foot traffic.</li>
+      <li>In-shop signage design and placement.</li>
+      <li>Point-of-sale promotional material.</li>
+      <li>Branding strategies for retail chains.</li>
+      <li>Campaign performance tracking in-store.</li>
+    </ul>`
+  },
+  direct: {
+    title: "Direct Marketing",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Targeted email and SMS campaigns.</li>
+      <li>Database-driven customer segmentation.</li>
+      <li>Personalized promotions for high engagement.</li>
+      <li>Direct outreach to prospective clients.</li>
+      <li>Analytics to measure campaign effectiveness.</li>
+    </ul>`
+  },
+  influencers: {
+    title: "Influencer Marketing",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Collaborate with top-tier influencers.</li>
+      <li>Authentic product promotion across social platforms.</li>
+      <li>Campaign planning and content strategy.</li>
+      <li>Performance tracking and analytics.</li>
+      <li>Micro-influencer campaigns for niche audiences.</li>
+    </ul>`
+  },
+  film: {
+    title: "In-Film Product Placement",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Integrate products seamlessly into films.</li>
+      <li>Collaborate with Bollywood & regional cinema.</li>
+      <li>Boost brand visibility through screen time.</li>
+      <li>Targeted placement for audience relevance.</li>
+      <li>Track engagement and brand recall metrics.</li>
+    </ul>`
+  },
+  planning: {
+    title: "Media Planning & Buying",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Strategic planning for media campaigns.</li>
+      <li>Cost-efficient media buying.</li>
+      <li>Competitive rate negotiation.</li>
+      <li>Data-driven targeting and reach maximization.</li>
+      <li>Continuous performance monitoring and optimization.</li>
+    </ul>`
+  },
+  live_events: {
+    title: "Live Events & Concerts",
+    text: `<ul style="list-style-position: inside; font-size:1.8rem; font-weight:700; display:flex; flex-direction:column; gap:1.5rem;">
+      <li>Large-scale event management and production.</li>
+      <li>Talent booking and artist management.</li>
+      <li>Promotion and audience engagement strategies.</li>
+      <li>Logistics, stage design, and technical setup.</li>
+      <li>Post-event performance and feedback analysis.</li>
+    </ul>`
+  }
+};
+
+let currentSlideIndex = 0;
+let slideInterval;
+
+function openService(key) {
+  const service = serviceDetails[key] || {title: "Expertise", text: "Professional media solutions."};
+
+  const overlayEl = document.getElementById('serviceOverlay');
+  overlayEl.style.background = "url('gradient.jpg') center/cover no-repeat";
+  overlayEl.style.color = "#fff";
+
+  const contentHtml = `
+    <h2 style="font-size:2rem; font-weight:800; opacity:0; transform:translateY(20px); animation: slideIn 0.5s forwards;">${service.title}</h2>
+    <div style="opacity:0; transform:translateY(20px); animation: slideIn 0.5s forwards; animation-delay:0.2s;">
+      ${service.text}
+    </div>
+    ${service.images ? `
+      <div class="slideshow-container">
+        <button class="slide-arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slide-arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
+        <div class="slides-wrapper" id="slidesWrapper">
+          ${service.images.map(img => `<img src="${img}" alt="${service.title}" onerror="this.src='https://via.placeholder.com/800x450?text=Service+Image'">`).join('')}
+        </div>
+      </div>
+    ` : ''}
+    <style>
+      @keyframes slideIn {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  `;
+
+  document.getElementById('serviceContent').innerHTML = contentHtml;
+  overlayEl.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  if(service.images) startSlideshow();
+}
+
+// SLIDESHOW
+function moveSlide(step){
+  const wrapper = document.getElementById('slidesWrapper');
+  if(!wrapper) return;
+  const totalSlides = wrapper.querySelectorAll('img').length;
+  currentSlideIndex = (currentSlideIndex + step + totalSlides) % totalSlides;
+  wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+}
+
+function startSlideshow(){
+  clearInterval(slideInterval);
+  slideInterval = setInterval(()=>moveSlide(1),4000);
+}
+
+// CLOSE SERVICE
+function closeService(){
+  const overlayEl = document.getElementById('serviceOverlay');
+  overlayEl.classList.remove('active');
+  overlayEl.style.background = "";
+  overlayEl.style.color = "";
+  document.body.style.overflow = 'auto';
+  clearInterval(slideInterval);
+}
+
+// --- Scroll Animations ---
+const sections = document.querySelectorAll('section');
+const counters = document.querySelectorAll('.counter');
+let counterStarted=false;
+
+window.addEventListener('scroll',()=>{
+  sections.forEach(sec => { if(sec.getBoundingClientRect().top < window.innerHeight-100) sec.classList.add('visible'); });
+  const ps=document.getElementById('progress');
+  if(ps && ps.getBoundingClientRect().top<window.innerHeight-100 && !counterStarted){
+    counters.forEach(c=>{
+      const target=+c.getAttribute('data-target');
+      let count=0;
+      const update=()=>{
+        count+=target/80;
+        if(count<target){
+          c.innerText = target>=1000000?Math.floor(count/1000000)+'M+':Math.floor(count)+'+';
+          requestAnimationFrame(update);
+        } else {
+          c.innerText=target>=1000000?Math.floor(target/1000000)+'M+':target+'+';
+        }
       };
+      update();
+    });
+    counterStarted=true;
+  }
+  if(window.scrollY>100) document.getElementById('dynamicHeader').style.transform="translateY(0)";
+  else document.getElementById('dynamicHeader').style.transform="translateY(-100%)";
+});
 
-      let currentSlideIndex = 0;
-      let slideInterval;
+window.addEventListener('load',()=>{document.getElementById('tagline').classList.add('show');});
+</script>
+<script>
+document.querySelectorAll('.service-card').forEach(card => {
+  // Get the service key from onclick attribute
+  const serviceKey = card.getAttribute('onclick').match(/'(\w+)'/)[1];
 
-      function openService(key) {
-        const service = serviceDetails[key] || {title: "Expertise", text: "Professional media solutions."};
-        let contentHtml = `<h2>${service.title}</h2><p>${service.text}</p>`;
+  // Create hover text div
+  const hoverText = document.createElement('div');
+  hoverText.classList.add('hover-text');
+  hoverText.innerText = serviceDetails[serviceKey]?.title || '';
+  hoverText.style.position = 'absolute';
+  hoverText.style.bottom = '10px';
+  hoverText.style.left = '50%';
+  hoverText.style.transform = 'translateX(-50%)';
+  hoverText.style.padding = '0.5rem 1rem';
+  hoverText.style.background = 'rgba(13, 110, 253, 0.9)';
+  hoverText.style.color = 'white';
+  hoverText.style.fontWeight = '700';
+  hoverText.style.borderRadius = '10px';
+  hoverText.style.opacity = '0';
+  hoverText.style.transition = '0.3s ease';
+  hoverText.style.pointerEvents = 'none'; // so hover works on card
 
-        if (service.images) {
-          currentSlideIndex = 0;
-          contentHtml += `
-            <div class="slideshow-container">
-              <button class="slide-arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="slide-arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
-              <div class="slides-wrapper" id="slidesWrapper">
-                ${service.images.map(img => `<img src="${img}" alt="${service.title}" onerror="this.src='https://via.placeholder.com/800x450?text=Service+Image'">`).join('')}
-              </div>
-            </div>`;
-        }
+  card.style.position = 'relative'; // make sure parent can position absolute
+  card.appendChild(hoverText);
 
-        document.getElementById('serviceContent').innerHTML = contentHtml;
-        document.getElementById('serviceOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
+  // Show on hover
+  card.addEventListener('mouseenter', () => {
+    hoverText.style.opacity = '1';
+    hoverText.style.transform = 'translateX(-50%) translateY(-5px)';
+  });
 
-        if (service.images) startSlideshow();
-      }
-
-      function moveSlide(step) {
-        const wrapper = document.getElementById('slidesWrapper');
-        if (!wrapper) return;
-        const totalSlides = wrapper.querySelectorAll('img').length;
-        currentSlideIndex = (currentSlideIndex + step + totalSlides) % totalSlides;
-        wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-      }
-
-      function startSlideshow() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => moveSlide(1), 4000);
-      }
-
-      function closeService() {
-        document.getElementById('serviceOverlay').classList.remove('active');
-        document.body.style.overflow = 'auto';
-        clearInterval(slideInterval);
-      }
-
-      const sections = document.querySelectorAll('section');
-      const counters = document.querySelectorAll('.counter');
-      let counterStarted = false;
-
-      window.addEventListener('scroll', () => {
-        sections.forEach(sec => {
-          if(sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('visible');
-        });
-
-        const ps = document.getElementById('progress');
-        if(ps && ps.getBoundingClientRect().top < window.innerHeight - 100 && !counterStarted){
-          counters.forEach(c => {
-            const target = +c.getAttribute('data-target');
-            let count = 0;
-            const update = () => {
-              count += target / 80;
-              if(count < target){
-                c.innerText = target >= 1000000 ? Math.floor(count/1000000)+'M+' : Math.floor(count)+'+';
-                requestAnimationFrame(update);
-              } else {
-                c.innerText = target >= 1000000 ? Math.floor(target/1000000)+'M+' : target+'+';
-              }
-            }
-            update();
-          });
-          counterStarted = true;
-        }
-
-        if(window.scrollY > 100) document.getElementById('dynamicHeader').style.transform = "translateY(0)";
-        else document.getElementById('dynamicHeader').style.transform = "translateY(-100%)";
-      });
-
-      window.addEventListener('load', () => {
-        document.getElementById('tagline').classList.add('show');
-      });
-    </script>
+  card.addEventListener('mouseleave', () => {
+    hoverText.style.opacity = '0';
+    hoverText.style.transform = 'translateX(-50%) translateY(0)';
+  });
+});
+</script>
 </body>
-
 </html>
