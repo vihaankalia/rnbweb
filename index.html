@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="saashub-verification" content="2hvgi4qfeazj" />
 
-  <title>Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE</title>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.routzandbeyond.com/">
+
+    <!-- Standard favicon (ICO) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Optional PNG favicon fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
+
+    <!-- SVG favicon (optional) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advertising Agency in Mumbai & UAE | Routz & Beyond</title>
 
   <script type="application/ld+json">
   {
@@ -25,8 +46,8 @@
   </script>
 
   <meta name="title" content="Routz & Beyond | Integrated Media & Advertising Solutions Mumbai & UAE">
-  <meta name="description" content="Routz & Beyond LLP is a leading integrated media solutions company specializing in event sponsorship, media advertising, digital marketing, and influencer outreach in Mumbai and UAE.">
-  <meta name="keywords" content="Media Solutions Mumbai, Advertising Agency UAE, Event Sponsorship, Influencer Marketing, Media Planning and Buying, Retail Branding, Routz and Beyond">
+  <meta name="description" content="Looking for a top advertising agency in Mumbai or UAE? Routz & Beyond boosts brands with outdoor ads, digital marketing & influencer campaigns. Free consultation!">
+<meta name="keywords" content="marketing agency Mumbai, branding agency Mumbai, outdoor advertising Mumbai">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Routz & Beyond">
 
@@ -58,6 +79,265 @@
   align-items: center;
   text-align: center;
   overflow: hidden;
+}
+/* CONSULTATION FULLSCREEN MODAL */
+
+#consultOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.7);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+opacity:0;
+visibility:hidden;
+
+transition:0.4s;
+
+z-index:9999;
+
+backdrop-filter:blur(6px);
+}
+.calc-button {
+  display: inline-block;
+  background: #0d6efd;
+  color: white;
+  padding: 25px 50px;       /* bigger height and width */
+  border-radius: 16px;      /* more rounded & modern */
+  font-weight: 700;          /* bolder */
+  font-size: 22px;           /* bigger text */
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+  cursor: pointer;
+  margin: 40px auto;         /* center horizontally */
+  display: block;            /* needed for margin auto to center */
+  max-width: 400px;          /* optional: don't make it stretch too far on big screens */
+  text-align: center;
+}
+.calculator-launch{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:60px 0;
+width:100%;
+}
+
+.calc-button:hover {
+  background: #004cc7;
+  transform: translateY(-4px) scale(1.05);  /* hover pop effect */
+  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.5);
+}
+
+#consultOverlay.show{
+opacity:1;
+visibility:visible;
+}
+
+.consult-box{
+
+background:white;
+
+padding:40px;
+
+border-radius:16px;
+
+max-width:420px;
+width:90%;
+
+box-shadow:0 30px 70px rgba(0,0,0,0.3);
+
+animation:popup 0.4s ease;
+
+}
+
+@keyframes popup{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+.consult-box h2{
+margin-bottom:8px;
+font-size:26px;
+}
+
+.consult-box p{
+color:#666;
+margin-bottom:20px;
+}
+
+.consult-box input,
+.consult-box select,
+.consult-box textarea{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:12px;
+
+border-radius:8px;
+
+border:1px solid #ddd;
+
+font-size:14px;
+}
+
+.phone-group{
+display:flex;
+gap:8px;
+}
+
+.phone-group select{
+width:35%;
+}
+
+.phone-group input{
+width:65%;
+}
+
+.consult-box textarea{
+resize:none;
+height:70px;
+}
+
+.consult-box button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+background:#0d6efd;
+
+color:white;
+
+font-weight:600;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.consult-box button:hover{
+background:#004cc7;
+}
+
+.consult-close{
+
+position:absolute;
+
+top:30px;
+right:40px;
+
+font-size:32px;
+
+background:none;
+
+border:none;
+
+color:white;
+
+cursor:pointer;
+}
+/* ---------------- NEWSLETTER / SUBSCRIBE ---------------- */
+#newsletter {
+  position: relative;
+  background: url('gradient.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+h1 {
+  color: #ffffff;
+}
+#newsletter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay for contrast */
+  z-index: 0;
+}
+
+#newsletter .newsletter-container {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: auto;
+  background: rgba(255,255,255,0.05); /* subtle transparent background */
+  padding: 40px;
+  border-radius: 25px;        /* rounded container */
+  backdrop-filter: blur(8px); /* nice soft blur behind */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#newsletter h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+#newsletter p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+#newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#newsletter input[type="email"] {
+  flex: 1 1 250px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px; /* fully rounded input */
+  font-size: 1rem;
+  outline: none;
+}
+
+#newsletter button {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px; /* fully rounded button */
+  background: #ffc107; /* catchy gold/yellow */
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#newsletter button:hover {
+  background: #ffca2c;
+  transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #newsletter form {
+    flex-direction: column;
+  }
+  #newsletter input[type="email"], #newsletter button {
+    width: 100%;
+  }
 }
 
 .hero-video {
@@ -116,7 +396,13 @@
 
     .tagline { margin-top:2rem; font-size:2.2rem; font-weight:700; color:#0d6efd; opacity:0; transform:translateY(20px); transition:opacity 0.8s ease, transform 0.8s ease; }
     .tagline.show { opacity:1; transform:translateY(0); }
-    h1.hero-seo-title { font-size: 0.1px; color: transparent; position: absolute; }
+    .hero-content h1{
+font-size:28px;
+font-weight:700;
+color:#0d6efd;
+text-align:center;
+margin-bottom:15px;
+}
 
     .scroll-down { position:absolute; bottom:40px; display:flex; justify-content:center; width:100%; animation:bounce 2s infinite; cursor:pointer; }
     .scroll-down span { display:block; width:20px; height:20px; border-bottom: 3px solid #0d6efd; border-right:3px solid #0d6efd; transform:rotate(45deg); margin:0 auto; }
@@ -179,6 +465,13 @@
       100% { transform: translateX(-50%); }
     }
 
+
+
+.calc-button:hover{
+background:#004cc7;
+transform:translateY(-3px);
+box-shadow:0 12px 28px rgba(13,110,253,0.45);
+}
     .progress-container { display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; }
     .progress-card { flex:1 1 200px; background:#f5f5f5; border-radius:10px; padding:2rem; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-align: center; }
     .progress-card h3 { font-size:3rem; color:#0d6efd; margin-bottom:1rem; font-weight:600; }
@@ -206,11 +499,170 @@
     #contact button:hover { background: #0056b3; transform: translateY(-2px); }
 
     footer { text-align:center; padding:2rem; background:#f5f5f5; color:#333; margin-top:2rem; }
+    /* ---------------- BLOG SECTION ---------------- */
 
+.blog-preview{
+padding:100px 10%;
+background:#fafafa;
+font-family:Arial;
+}
+
+.blog-header{
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+.blog-header h2{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.blog-header p{
+color:#666;
+}
+
+.blog-grid{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.blog-card{
+position:relative;
+background:white;
+border-radius:14px;
+padding:30px;
+text-decoration:none;
+color:black;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+transition:all 0.35s ease;
+}
+
+.blog-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.blog-card h3{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.blog-content p{
+color:#555;
+line-height:1.6;
+max-height:85px;
+overflow:hidden;
+position:relative;
+}
+
+.blog-content p::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:40px;
+background:linear-gradient(transparent,white);
+}
+
+.read-more{
+display:inline-block;
+margin-top:15px;
+font-weight:600;
+color:#111;
+transition:0.3s;
+}
+
+.blog-card:hover .read-more{
+transform:translateX(6px);
+}
+
+.blog-btn{
+text-align:center;
+margin-top:60px;
+}
+
+.view-all{
+background:black;
+color:white;
+padding:14px 34px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.view-all:hover{
+background:#333;
+}
+/* Exit Popup Overlay */
+.exit-popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('gradient.jpg') no-repeat center center;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+}
+
+/* Popup Box */
+.exit-popup-content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Close Button */
+.exit-close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Input & Button */
+#exitEmail {
+  padding: 12px 15px;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#exitSubscribe {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#exitSubscribe:hover {
+  transform: scale(1.05);
+}
     @media(max-width:768px){ .services-container { flex-direction:column; align-items:center; } .slides-wrapper img { height: 300px; } .phone-group { flex-direction: column; } .phone-group select { flex: 1; } .logo-container { width:160px; height:80px; margin-right:3rem; } .logo-container img { width:160px; height:80px; } }
   </style>
-    <link rel="icon" type="image/png" sizes="32x32" href="circle.png">
-<link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/png">
 </head>
 <body>
 
@@ -231,11 +683,8 @@
     </div>
 
 <section class="hero">
-
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src=".mp4" type="video/mp4">
-  </video>
+  <!-- MAIN H1 -->
+  <h1>Grow Your Brand with a Leading Marketing Agency in Mumbai & UAE</h1>
 
   <!-- Logo + Text -->
   <div class="hero-content">
@@ -244,7 +693,6 @@
       Your journey to success starts here
     </div>
   </div>
-
 </section>
 
     <section id="about">
@@ -307,6 +755,51 @@
       <button class="close-btn" onclick="closeService()">×</button>
       <div id="serviceContent"></div>
     </div>
+    <!-- FREE CONSULTATION FULLSCREEN OVERLAY -->
+
+<div id="consultOverlay">
+
+<button class="consult-close" onclick="closeConsult()">×</button>
+
+<div class="consult-box">
+
+<h2>Free Marketing Consultation</h2>
+<p>Speak with our strategy team and discover how your brand can grow.</p>
+
+<form action="https://formspree.io/f/xpqakygn" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<div class="phone-group">
+
+<select name="country">
+
+<option value="+1">🇺🇸 +1</option>
+<option value="+44">🇬🇧 +44</option>
+<option value="+91">🇮🇳 +91</option>
+<option value="+971">🇦🇪 +971</option>
+<option value="+61">🇦🇺 +61</option>
+
+</select>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+</div>
+
+
+
+
+<button type="submit">Request Free Consultation</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
 
     <section id="why">
       <h2>Our Partners</h2>
@@ -343,6 +836,79 @@
         <div class="progress-card"><h3 class="counter" data-target="50">0</h3><p>Global Clients</p></div>
       </div>
     </section>
+  <section class="blog-preview">
+
+  <div class="blog-header">
+    <h2>Insights & Marketing Strategies</h2>
+    <p>Explore expert insights from a leading digital marketing agency helping startups, fintech companies, ecommerce brands and enterprises scale faster.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <a href="blogs.html" class="blog-card">
+      <div class="blog-content">
+        <h3>Top Performance Marketing Agencies in India</h3>
+        <p>
+        Discover the top performance marketing agencies in India helping brands scale with paid ads, SEO and data-driven marketing strategies that increase ROI, improve brand visibility and accelerate digital growth for startups and enterprises.
+        </p>
+        <span class="read-more">Read Article →</span>
+      </div>
+    </a>
+
+
+    <a href="blogs.html" class="blog-card">
+      <div class="blog-content">
+        <h3>Best Digital Marketing Agency for Startups</h3>
+        <p>
+        Learn how a digital marketing agency for startups helps founders scale faster using performance marketing, SEO, growth marketing frameworks, influencer collaborations and targeted customer acquisition strategies.
+        </p>
+        <span class="read-more">Read Article →</span>
+      </div>
+    </a>
+
+
+    <a href="blogs.html" class="blog-card">
+      <div class="blog-content">
+        <h3>Fintech Marketing Agency Guide</h3>
+        <p>
+        Fintech companies require highly specialized marketing strategies. Discover how fintech marketing agencies leverage SEO, paid media, content marketing and performance analytics to scale financial platforms.
+        </p>
+        <span class="read-more">Read Article →</span>
+      </div>
+    </a>
+
+
+    <!-- Fourth Blog -->
+    <a href="blogs.html" class="blog-card">
+      <div class="blog-content">
+        <h3>How SEO Helps Businesses Grow Online</h3>
+        <p>
+        Search Engine Optimization helps businesses rank higher on Google, attract organic traffic and generate high-quality leads. Learn how modern SEO strategies improve brand visibility and long-term digital growth.
+        </p>
+        <span class="read-more">Read Article →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="blog-btn">
+    <a href="blogs.html" class="view-all">Explore All Articles</a>
+  </div>
+      <!-- Exit Intent Popup -->
+<div id="exitPopup" class="exit-popup">
+  <div class="exit-popup-content">
+    <span id="exitClose" class="exit-close">&times;</span>
+    <h2>Wait! Don’t Leave Yet 😲</h2>
+    <p>Get our free marketing guide & tips straight to your inbox!</p>
+    <input type="email" placeholder="Enter your email" id="exitEmail">
+    <button id="exitSubscribe">Subscribe Free</button>
+  </div>
+</div>
+
+</section>
+<div class="calculator-launch">
+<a href="calculator.html" class="calc-button">Try Our Campaign Impact Calculator</a>
+</div>
 
 <section id="signage-map">
   <h2>Signage Locations Across India</h2>
@@ -421,6 +987,31 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+    <section id="newsletter">
+
+<div class="newsletter-container">
+
+<h2>Get Weekly Marketing Insights</h2>
+
+<p>
+Join 2,000+ founders and marketers receiving practical growth strategies,
+SEO insights, and digital marketing playbooks from the Routz & Beyond team.
+</p>
+
+<form action="https://formspree.io/f/xpqakygn" method="POST">
+
+<input type="email" name="email" placeholder="Enter your email address" required>
+
+<button type="submit">Subscribe Free</button>
+
+</form>
+
+
+
+
+</div>
+
+</section>
     <section id="contact">
       <h2>Request a Media Plan</h2>
       <form action="https://formspree.io/f/xpqakygn" method="POST">
@@ -665,6 +1256,35 @@ window.addEventListener('scroll',()=>{
 
 window.addEventListener('load',()=>{document.getElementById('tagline').classList.add('show');});
 </script>
+    <script>
+
+let consultTriggered = false;
+
+window.addEventListener("scroll", () => {
+
+const servicesSection = document.getElementById("services");
+
+if(!consultTriggered && servicesSection.getBoundingClientRect().top < window.innerHeight - 100){
+
+document.getElementById("consultOverlay").classList.add("show");
+
+document.body.style.overflow = "hidden";
+
+consultTriggered = true;
+
+}
+
+});
+
+function closeConsult(){
+
+document.getElementById("consultOverlay").classList.remove("show");
+
+document.body.style.overflow = "auto";
+
+}
+
+</script>
 <script>
 document.querySelectorAll('.service-card').forEach(card => {
   // Get the service key from onclick attribute
@@ -700,7 +1320,10 @@ document.querySelectorAll('.service-card').forEach(card => {
     hoverText.style.opacity = '0';
     hoverText.style.transform = 'translateX(-50%) translateY(0)';
   });
+
 });
 </script>
+
 </body>
+
 </html>
