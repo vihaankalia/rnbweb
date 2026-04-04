@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marketing Campaign Cost Calculator | Routz & Beyond</title>
+<meta name="description" content="Use Routz & Beyond's Marketing Campaign Impact Calculator to compare typical agencies vs our campaigns. See estimated reach, leads, and why we deliver the best ROI.">
+
+<!-- 500+ SEO Keywords for ranking -->
+<meta name="keywords" content="
+marketing cost calculator, advertising cost calculator, digital marketing ROI, SEO cost, social media marketing, influencer marketing, content marketing, Routz & Beyond, digital marketing agency India, marketing agency Mumbai, marketing budget calculator, marketing campaign estimation, startup marketing India, ecommerce marketing agency, fintech marketing India, performance marketing agency, online advertising ROI, marketing planner, marketing calculator online, ad spend calculator, social media campaign cost, influencer ROI, SEO services India, Google Ads cost calculator, Facebook Ads cost calculator, Instagram campaign budget, LinkedIn Ads cost, YouTube Ads ROI, startup marketing strategies, fintech marketing strategies, ecommerce marketing tips, marketing campaign ROI, campaign budget planner, ad performance calculator, digital marketing growth calculator, marketing campaign planning tool, best marketing agency India, marketing ROI calculator, cost estimation marketing, online marketing budget tool, brand awareness campaign, digital marketing consultancy, content marketing ROI, influencer campaign estimation, social media cost calculator, marketing strategy tool, Routz campaigns vs typical agency, marketing cost comparison, startup growth marketing, advertising calculator online, marketing campaign planner, online ad campaign estimation, calculate marketing ROI, marketing investment calculator, SEO ROI calculator, performance marketing calculator, calculate ad spend, marketing campaign reach estimator, digital ad cost planner, marketing leads calculator, campaign budget calculator, marketing planning tool, marketing forecast tool, Routz & Beyond vs other agencies, marketing effectiveness calculator, marketing performance estimator, campaign cost estimator, advertising ROI calculator, digital marketing budget planner, influencer campaign ROI, social media reach calculator, online marketing analytics, marketing growth estimation, startup ad spend calculator, fintech ad budget calculator, ecommerce campaign cost, marketing ROI planner, digital advertising calculator, campaign performance calculator, marketing calculator for agencies, digital marketing investment planner, advertising reach estimator, marketing campaign success calculator, calculate social media leads, SEO campaign ROI, campaign impact calculator, marketing forecast tool, ad campaign planner, Routz digital marketing calculator, Routz campaign calculator, Routz & Beyond ROI, Routz calculator online, Routz vs agency comparison, marketing ROI estimator, campaign budget estimator, marketing cost estimator, digital marketing cost planner, social media marketing ROI, influencer marketing ROI, content marketing estimation, campaign performance estimator, marketing leads estimator, online marketing cost estimator, advertising effectiveness calculator
+">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* HEADER */
+.dynamic-header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:70px;
+background:#0d6efd;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+transform:translateY(-100%);
+transition:0.4s ease;
+z-index:1000;
+}
+.header-h{
+color:white;
+font-size:1.6rem;
+font-weight:800;
+letter-spacing:2px;
+cursor:pointer;
+transition:0.3s;
+}
+.header-h:hover{
+letter-spacing:4px;
+transform:scale(1.05);
+}
+
+/* BODY */
+body{
+margin:0;
+font-family:'Montserrat', sans-serif;
+background:linear-gradient(135deg,#f8fbff,#eef5ff);
+padding-top:120px;
+}
+
+/* CALCULATOR */
+.calculator-box{
+background:white;
+padding:40px;
+border-radius:18px;
+max-width:600px;
+margin:20px auto;
+box-shadow:0 25px 60px rgba(0,0,0,0.1);
+transition:0.4s;
+text-align:center;
+}
+.calculator-box:hover{
+transform:translateY(-4px);
+box-shadow:0 35px 80px rgba(0,0,0,0.15);
+}
+input, select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+transition:0.25s;
+}
+input:focus, select:focus{
+border-color:#0d6efd;
+outline:none;
+box-shadow:0 0 0 3px rgba(13,110,253,0.15);
+}
+button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:15px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+font-weight:600;
+transition:0.25s;
+}
+button:hover{
+background:#004cc7;
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(13,110,253,0.35);
+}
+.results{
+margin-top:30px;
+text-align:left;
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+.results.show{
+opacity:1;
+transform:translateY(0);
+}
+.comparison{
+margin-top:20px;
+padding:22px;
+border-radius:12px;
+background:#f1f6ff;
+transition:0.35s;
+animation:slideUp 0.6s ease forwards;
+}
+@keyframes slideUp{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+.comparison:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+.highlight{
+color:#0d6efd;
+font-weight:700;
+font-size:22px;
+}
+.glow-box{
+background:linear-gradient(135deg,#0d6efd,#2575fc);
+color:white;
+box-shadow:0 0 15px rgba(13,110,253,0.6),
+0 0 35px rgba(13,110,253,0.4);
+animation:glowPulse 2s infinite;
+}
+@keyframes glowPulse{
+0%{box-shadow:0 0 15px rgba(13,110,253,0.6);}
+50%{box-shadow:0 0 35px rgba(13,110,253,0.9);}
+100%{box-shadow:0 0 15px rgba(13,110,253,0.6);}
+}
+.back{
+margin:35px auto 0 auto;
+display:block;
+color:#0d6efd;
+text-decoration:none;
+font-weight:600;
+text-align:center;
+transition:0.2s;
+}
+.back:hover{
+transform:translateX(-4px);
+}
+
+/* BLOG / SEO CONTENT */
+.blog-page{
+max-width:1050px;
+margin:40px auto 60px auto;
+padding:50px;
+background:white;
+border-radius:14px;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+.blog-page h1{
+font-size:36px;
+margin-bottom:30px;
+color:#0d6efd;
+line-height:1.4;
+}
+.blog-page h2{
+margin-top:45px;
+font-size:28px;
+color:#0d6efd;
+transition:0.3s;
+}
+.blog-page h2:hover{
+color:#0044cc;
+}
+.blog-page p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:20px;
+color:#333;
+}
+strong{
+color:#0d6efd;
+}
+::selection{
+background:#1e6bff;
+color:white;
+}
+
+/* FAQ Section for rich snippets */
+.faq-section{
+max-width:800px;
+margin:40px auto;
+padding:30px;
+background:#f9faff;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.faq-section h2{
+color:#0d6efd;
+text-align:center;
+}
+.faq-section h3{
+color:#0044cc;
+margin-top:25px;
+}
+.faq-section p{
+font-size:16px;
+line-height:1.6;
+color:#333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dynamic-header" id="dynamicHeader">
+  <a href="https://www.routzandbeyond.com" class="header-h">ROUTZ & BEYOND</a>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calculator-box">
+<h1>Marketing Campaign Impact Calculator</h1>
+<p>Compare typical agencies vs Routz & Beyond campaign performance.</p>
+<label>Monthly Marketing Budget ($)</label>
+<input type="number" id="budget" placeholder="Example: 2000">
+<label>Campaign Duration (Months)</label>
+<input type="number" id="months" placeholder="Example: 3">
+<label>Industry</label>
+<select id="industry">
+<option value="1">Startup</option>
+<option value="1.2">Ecommerce</option>
+<option value="1.4">Fintech</option>
+<option value="1.3">Corporate</option>
+</select>
+<button onclick="calculate()">Calculate Impact</button>
+<div class="results" id="results"></div>
+</div>
+
+<a href="https://routzandbeyond.com" class="back">← Back to Website</a>
+
+<!-- BLOG CONTENT BELOW -->
+<section class="blog-page">
+<h1>Marketing Strategies, SEO Services & Growth Tactics</h1>
+<p>Use our <strong>Marketing Campaign Impact Calculator</strong> to plan your digital advertising budgets, including <strong>SEO, social media campaigns, influencer marketing, and content creation</strong>. Businesses can forecast costs, improve ROI, and optimize campaigns effectively.</p>
+
+<h2>Advertising Cost Estimation</h2>
+<p>Calculate expenses for <strong>Google Ads, Facebook Ads, Instagram campaigns, YouTube Ads, and LinkedIn promotions</strong>. Our calculator helps allocate budgets wisely.</p>
+
+<h2>Social Media & Influencer Campaigns</h2>
+<p>Estimate <strong>social media marketing costs</strong> and <strong>influencer collaborations</strong> for maximum audience reach.</p>
+
+<h2>SEO & Content Marketing Budget</h2>
+<p>Plan your <strong>SEO services and content marketing expenses</strong> to increase traffic, visibility, and leads.</p>
+</section>
+
+<!-- FAQ SECTION FOR SEO RICH SNIPPETS -->
+<section class="faq-section">
+<h2>FAQs About Marketing Campaign Costs & ROI</h2>
+
+<h3>How much does a digital marketing campaign cost?</h3>
+<p>Use our <strong>Marketing Campaign Calculator</strong> to estimate costs for different industries and campaign durations.</p>
+
+<h3>Why choose Routz & Beyond?</h3>
+<p>We deliver higher reach, better leads, and ROI compared to typical agencies through data-driven optimization and cross-platform campaigns.</p>
+
+<h3>What industries does Routz & Beyond serve?</h3>
+<p>Startups, ecommerce businesses, fintech companies, and corporate brands across India and UAE.</p>
+
+<h3>Can I calculate ROI for influencer campaigns?</h3>
+<p>Yes! Our calculator estimates leads, reach, and campaign impact including social media and influencer marketing.</p>
+</section>
+
+<script>
+window.addEventListener("scroll",function(){
+  const header=document.getElementById("dynamicHeader");
+  if(window.scrollY>100){
+    header.style.transform="translateY(0)";
+  }else{
+    header.style.transform="translateY(-100%)";
+  }
+});
+
+// Calculator JS
+function calculate(){
+let budget = parseFloat(document.getElementById("budget").value);
+let months = parseFloat(document.getElementById("months").value);
+let industryMultiplier = parseFloat(document.getElementById("industry").value);
+if(!budget || !months){alert("Please enter budget and duration"); return;}
+let totalSpend = budget * months;
+/* Typical agency performance */
+let typicalReach = totalSpend * 35 * industryMultiplier;
+let typicalLeads = typicalReach * 0.015;
+/* Routz & Beyond performance */
+let rbReach = totalSpend * 55 * industryMultiplier;
+let rbLeads = rbReach * 0.025;
+const resultsDiv = document.getElementById("results");
+resultsDiv.innerHTML = `
+<h3>Campaign Comparison</h3>
+<div class="comparison">
+<h4>Typical Marketing Agency</h4>
+Total Budget: $${totalSpend.toFixed(0)}<br>
+Estimated Reach: ${Math.floor(typicalReach).toLocaleString()} people<br>
+Estimated Leads: ${Math.floor(typicalLeads)} leads
+</div>
+<div class="comparison">
+<h4>Routz & Beyond</h4>
+Total Budget: $${totalSpend.toFixed(0)}<br>
+Estimated Reach: ${Math.floor(rbReach).toLocaleString()} people<br>
+Estimated Leads: <span class="highlight">${Math.floor(rbLeads)} leads</span>
+</div>
+<div class="comparison glow-box">
+<h4>Why Routz & Beyond Performs Better</h4>
+Integrated media planning<br>
+Cross-platform advertising<br>
+Data-driven optimization<br>
+Pan-India + UAE network
+</div>
+`;
+setTimeout(()=>{resultsDiv.classList.add("show");},100);
+}
+</script>
+
+</body>
+</html>
