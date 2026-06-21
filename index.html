@@ -1,536 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="circle.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertising Agency in Mumbai | Routz & Beyond</title>
+    <meta name="description" content="Routz & Beyond is a leading integrated media and Marketing agency in Mumbai. Specializing in offline, digital, and sports marketing strategies since 2015.">
 
-    <meta name="description" content="Routz & Beyond is a leading integrated media  and Marketing agency in Mumbai. Specializing in offline, digital, and sports marketing strategies since 2015.">
+    <meta property="og:title" content="Routz & Beyond | Precision Media Planning">
+    <meta property="og:description" content="A premier Pan - India Marketing Agency. We don't just buy media. We engineer brand visibility.">
+    <meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="circle.png">
+
+    <!-- Premium Fonts: Syne for Editorial Headers, Inter for Corporate Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --primary-blue: #0d47a1;
             --accent-blue: #1976d2;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
             --text-dark: #0f172a;
             --text-muted: #64748b;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
+            --border: #e2e8f0;
+            --border-dark: #1e3a8a;
+            --transition: cubic-bezier(0.16, 1, 0.3, 1); /* Expo ease out */
         }
 
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
-        body { background: var(--white); color: var(--text-dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-/* MOBILE MENU STYLES */
-.nav-links-mobile {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    background: var(--primary-blue);
-    position: absolute;
-    top: 62px; /* Height of your header */
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 999;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--bg-white);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+        }
 
-.nav-links-mobile.active {
-    display: flex; /* Shown when 'active' class is added */
-}
+        h1, h2, h3, h4 { font-family: 'Syne', sans-serif; letter-spacing: -0.02em; line-height: 0.95; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button { font-family: 'Inter', sans-serif; cursor: pointer; }
 
-.nav-links-mobile a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 5%;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+        /* SCROLL PROGRESS BAR */
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-blue); width: 0%; z-index: 1002; transition: width 0.1s linear; }
 
-/* Hide hamburger on large screens */
-@media (min-width: 769px) {
-    .menu-toggle { display: none; }
-}
         /* HEADER */
         header {
-            background: var(--primary-blue);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.4s var(--transition), padding 0.4s var(--transition), border-bottom 0.4s;
+            border-bottom: 1px solid transparent;
+        }
+        header.scrolled {
+            padding: 16px 48px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            padding-left: 1rem;
-        }
-        .logo-wrapper img {
-            height: 32px;
-            width: auto;
-            object-fit: contain;
-        }
-        .logo-text {
-            color: var(--white);
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .logo-wrapper { display: flex; align-items: center; gap: 12px; z-index: 1001; }
+        .logo-wrapper img { height: 32px; width: auto; }
+        .logo-text { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; color: var(--primary-blue); }
 
-        .menu-toggle { color: var(--white); font-size: 1.4rem; cursor: pointer; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; position: relative; color: var(--text-dark); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--primary-blue); transition: width 0.4s var(--transition); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .menu-btn { background: none; border: none; color: var(--primary-blue); font-size: 1.2rem; display: none; }
+
+        /* MOBILE MENU */
+        .nav-links-mobile {
+            display: none; flex-direction: column; background: var(--primary-blue);
+            position: absolute; top: 100%; left: 0; width: 100%; padding: 20px 5%;
+            z-index: 999; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links-mobile.active { display: flex; }
+        .nav-links-mobile a {
+            color: white; text-decoration: none; padding: 15px 0; font-size: 0.9rem;
+            font-weight: 600; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        @media (min-width: 769px) { .menu-btn { display: none; } }
 
         /* FIXED SERVICE NAV BAR */
         .service-nav {
-            background: var(--white);
-            border-bottom: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: center;
-            overflow-x: auto;
-            white-space: nowrap;
-            scrollbar-width: none;
-            padding: 0 20px;
+            position: fixed; top: 65px; left: 0; width: 100%; z-index: 999;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex; justify-content: center; overflow-x: auto;
+            white-space: nowrap; scrollbar-width: none; padding: 0 20px;
         }
         .service-nav::-webkit-scrollbar { display: none; }
 
-        .nav-link {
-            text-decoration: none;
-            padding: 20px 15px;
-            position: relative;
-            min-width: 110px;
-            display: inline-block;
-        }
-
-        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .nav-link { text-decoration: none; padding: 18px 15px; position: relative; min-width: 110px; display: inline-block; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
         .nav-item i { font-size: 1.1rem; color: var(--text-muted); transition: 0.3s; }
         .nav-item p { font-size: 0.6rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin: 0; }
-
         .nav-link:hover .nav-item i, .nav-link:hover .nav-item p { color: var(--primary-blue); }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--primary-blue);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+            content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px;
+            background: var(--primary-blue); transition: all 0.3s ease; transform: translateX(-50%);
         }
         .nav-link:hover::after { width: 80%; }
 
         /* HERO SECTION */
-        .hero-container { text-align: center; padding: 60px 5% 40px; }
-        .hero-container h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero-sub { font-size: 1rem; font-weight: 500; margin-bottom: 40px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
-        .hero-sub span { padding: 0 20px; border-right: 1px solid #e2e8f0; }
-        .hero-sub span:last-child { border: none; }
-
-        .mumbai-banner {
-            width: 100%; max-width: 1150px; height: 500px; margin: 0 auto; border-radius: 4px;
-            background: linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.7)), url('hero.jpg');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--white);
-            box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.25);
-        }
-        .mumbai-banner h2 { font-size: 4rem; font-weight: 800; letter-spacing: 5px; }
-        /* ABOUT SECTION */
-.about-section {
-    background: var(--primary-blue);
-    color: var(--white);
-    padding: 80px 5%;
-    text-align: center;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-content h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    opacity: 0.9;
-}
-
-        /* SERVICES GRID */
-        .services-section { padding: 80px 5% 60px; background: var(--bg-light); text-align: center; }
-        .services-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 1px; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-tile {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .service-tile i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; }
-        .service-tile h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-        .service-tile p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-        .service-tile:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1); border-color: var(--primary-blue); }
-
-        /* PROGRESS SECTION */
-        .progress-section {
-            background: var(--primary-blue);
-            padding: 80px 5%;
-            text-align: center;
-            color: var(--white);
-        }
-        .progress-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-        .progress-section p.intro-text {
-            max-width: 800px;
-            margin: 0 auto 60px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-        .progress-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 1000px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .progress-item {
-            padding: 60px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .progress-item:nth-child(odd) {
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .progress-item h3 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-        .progress-item p {
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        /* CLIENTS MOVING LOGO SECTION */
-        .partners-section {
-            background: var(--white);
-            padding: 80px 0;
-            text-align: center;
+        .hero {
+            min-height: 100vh; width: 100%; position: relative; display: flex; flex-direction: column;
+            justify-content: center; padding: 180px 48px 60px; background: var(--bg-white);
             overflow: hidden;
         }
-        .partners-section h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 50px;
-            color: var(--text-dark);
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; object-fit: cover; z-index: 0; background-image: url('hero.jpg'); background-size: cover; background-position: center; }
+        .hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; width: 100%; }
+
+        .hero-meta { display: flex; gap: 40px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 30px; font-weight: 600; }
+        .hero-meta span { display: flex; align-items: center; gap: 8px; }
+        .hero-meta i { color: var(--accent-blue); font-size: 0.5rem; }
+
+        .hero h1 { font-size: clamp(2.5rem, 7vw, 7.5rem); font-weight: 800; margin-bottom: 30px; text-transform: uppercase; color: var(--text-dark); }
+        .hero h1 .outline { -webkit-text-stroke: 1.5px var(--primary-blue); color: transparent; font-weight: 400; }
+
+        .hero-sub { font-size: 0.9rem; font-weight: 600; margin-bottom: 40px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; display: flex; gap: 20px; flex-wrap: wrap; }
+        .hero-sub span { padding-right: 20px; border-right: 1px solid var(--border); }
+        .hero-sub span:last-child { border: none; padding: 0; }
+
+        .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px; flex-wrap: wrap; gap: 40px; border-top: 1px solid var(--border); padding-top: 40px; }
+
+        /* Updated Hero Description: Wider, lighter font, more visually appealing */
+        .hero-desc { max-width: 750px; font-size: 1.2rem; line-height: 1.7; color: var(--text-muted); font-weight: 300; letter-spacing: -0.01em; }
+
+        .cta-magnetic {
+            display: inline-flex; align-items: center; gap: 15px;
+            padding: 20px 36px; border: 1px solid var(--primary-blue);
+            font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;
+            transition: all 0.4s var(--transition); position: relative; overflow: hidden; color: var(--primary-blue);
         }
-        .logo-slider {
-            display: flex;
-            width: calc(250px * 14);
-            animation: scroll 25s linear infinite;
+        .cta-magnetic::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-blue); transform: translateY(100%); transition: transform 0.4s var(--transition); z-index: -1; }
+        .cta-magnetic:hover { color: #fff; }
+        .cta-magnetic:hover::before { transform: translateY(0); }
+
+        .mumbai-banner {
+            width: 100%; max-width: 1400px; height: 400px; margin: 60px auto 0; border-radius: 8px;
+            background: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.8)), url('hero.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #ffffff;
+            box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.4);
         }
-        .logo-slider img {
-            width: 170px;
-            height: 70px;
-            object-fit: contain;
-            margin: 0 40px;
-            filter: grayscale(100%);
-            opacity: 0.5;
-            transition: 0.4s ease;
+        .mumbai-banner p { font-size: 1rem; letter-spacing: 2px; opacity: 0.9; text-transform: uppercase; color: #ffffff !important; }
+        .mumbai-banner h2 { font-size: 5rem; font-weight: 800; letter-spacing: 5px; margin: 10px 0; font-family: 'Syne', sans-serif; color: #ffffff !important; }
+
+        /* MARQUEE */
+        .marquee-section { background: var(--primary-blue); color: #fff; padding: 30px 0; overflow: hidden; }
+        .marquee { display: flex; white-space: nowrap; animation: scroll 25s linear infinite; }
+        .marquee-item { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 700; text-transform: uppercase; padding: 0 40px; display: flex; align-items: center; gap: 60px; }
+        .marquee-item::after { content: '✦'; font-size: 1.5rem; color: var(--accent-blue); }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* MANIFESTO / ABOUT SECTION */
+        .manifesto { padding: 150px 48px; background: var(--bg-white); max-width: 1400px; margin: 0 auto; }
+        .manifesto-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+        .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-blue); font-weight: 600; padding-top: 10px; border-top: 1px solid var(--border); }
+        .manifesto h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.1; color: var(--text-dark); margin-bottom: 30px; }
+        .manifesto h2 span { font-style: italic; font-weight: 400; color: var(--text-muted); }
+        .manifesto p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); font-weight: 400; }
+
+        /* CAPABILITIES (INTERACTIVE LIST) */
+        .capabilities { background: var(--primary-blue); color: #fff; padding: 150px 48px; }
+        .cap-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+        .cap-header h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 60px; text-transform: uppercase; }
+
+        .cap-list { list-style: none; }
+        /* Converted to <a> tags, so added display flex and text-decoration none */
+        .cap-item {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2); padding: 25px 0;
+            color: #fff; text-decoration: none;
+            cursor: pointer; transition: padding 0.4s var(--transition);
         }
-        .logo-slider img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
+        .cap-item:first-child { border-top: 1px solid rgba(255,255,255,0.2); }
+        .cap-item:hover { padding-left: 24px; }
+        .cap-item h3 { font-size: 1.5rem; font-weight: 600; transition: color 0.3s; text-transform: uppercase; }
+        .cap-item:hover h3 { color: #4ade80; } /* Subtle green accent for prestige */
+        .cap-item p { opacity: 0; transform: translateX(-20px); transition: all 0.4s var(--transition); font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 300px; text-align: right; }
+        .cap-item:hover p { opacity: 1; transform: translateX(0); }
+
+        /* IMPACT / STATS */
+        .impact { padding: 150px 48px; background: var(--bg-white); }
+        .impact-container { max-width: 1400px; margin: 0 auto; }
+        .impact-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; flex-wrap: wrap; gap: 40px; }
+        .impact-header h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); max-width: 800px; color: var(--text-dark); }
+        .impact-header p { max-width: 400px; color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; border-top: 2px solid var(--primary-blue); padding-top: 40px; }
+        .stat-item h3 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 800; margin-bottom: 10px; color: var(--primary-blue); }
+        .stat-item p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
+
+        /* PARTNERS SLIDER */
+        .partners-section { background: var(--bg-light); padding: 80px 0; text-align: center; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .partners-section h2 { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 50px; color: var(--text-muted); }
+        .logo-slider { display: flex; width: calc(250px * 14); animation: scroll 25s linear infinite; }
+        .logo-slider img { width: 170px; height: 70px; object-fit: contain; margin: 0 40px; filter: grayscale(100%); opacity: 0.5; transition: 0.4s ease; }
+        .logo-slider img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+        /* CTA / CONTACT */
+        .cta-section { background: var(--bg-white); color: var(--text-dark); padding: 150px 48px; border-top: 1px solid var(--border); }
+        .cta-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
+        .cta-text h2 { font-size: clamp(3rem, 7vw, 6rem); margin-bottom: 40px; line-height: 0.9; text-transform: uppercase; }
+        .cta-text h2 span { font-style: italic; font-weight: 400; color: var(--primary-blue); }
+
+        .corporate-form { display: flex; flex-direction: column; gap: 0; }
+        .form-group { position: relative; border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .form-group label { position: absolute; top: 20px; left: 0; color: var(--text-muted); pointer-events: none; transition: all 0.3s var(--transition); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; background: transparent; border: none; outline: none; color: var(--text-dark); font-size: 1.2rem; font-family: 'Syne', sans-serif; padding: 10px 0; font-weight: 600;
+        }
+        .form-group select { appearance: none; }
+        .form-group input:focus + label, .form-group input:valid + label,
+        .form-group textarea:focus + label, .form-group textarea:valid + label { top: -5px; font-size: 0.7rem; color: var(--primary-blue); }
+
+        .phone-group { display: flex; gap: 20px; border-bottom: 1px solid var(--border); }
+        .phone-group .form-group { flex: 1; border: none; }
+        .phone-group .form-group:nth-child(1) { max-width: 100px; }
+
+        .submit-btn {
+            margin-top: 40px; background: var(--primary-blue); color: #fff; border: none; padding: 25px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.4s var(--transition); display: flex; justify-content: space-between; align-items: center;
+        }
+        .submit-btn:hover { background: var(--text-dark); }
+        .submit-btn i { transition: transform 0.3s; }
+        .submit-btn:hover i { transform: translateX(10px); }
+
+        /* FOOTER */
+        footer { background: var(--text-dark); color: #94a3b8; padding: 60px 48px; }
+        .footer-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .footer-links { display: flex; gap: 30px; }
+        .footer-links a:hover { color: #fff; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            header, .hero, .manifesto, .capabilities, .impact, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+            .service-nav { top: 60px; }
+            .manifesto-grid, .cap-container, .cta-container { grid-template-columns: 1fr; gap: 40px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .hero-bottom { flex-direction: column; align-items: flex-start; }
+            .marquee-item { font-size: 2rem; }
+            .mumbai-banner h2 { font-size: 3rem; }
         }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 7)); }
-        }
-
-        /* CONTACT FORM SECTION */
-        #contact {
-            padding: 80px 5%;
-            background: var(--bg-light);
-            text-align: center;
-        }
-        #contact h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        #contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        #contact input, #contact textarea, #contact select {
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            font-size: 1rem;
-            width: 100%;
-            outline: none;
-        }
-        #contact input:focus, #contact textarea:focus {
-            border-color: var(--primary-blue);
-        }
-        .phone-group {
-            display: flex;
-            gap: 10px;
-        }
-        .phone-group select {
-            width: 100px;
-        }
-        #contact button {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 18px;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        #contact button:hover {
-            background: var(--accent-blue);
-        }
-
-        /* CONTACT STRIP */
-        .contact-strip {
-            background: var(--text-dark);
-            padding: 30px 5%;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--white);
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-container h1 { font-size: 2rem; }
-            .mumbai-banner h2 { font-size: 2.5rem; }
-            .progress-grid { grid-template-columns: 1fr; }
-            .progress-item:nth-child(odd) { border-right: none; }
-            .progress-item h3 { font-size: 2.5rem; }
-            .contact-strip { flex-direction: column; align-items: center; gap: 15px; }
-        }
+        /* SCROLL REVEAL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-<header>
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- HEADER -->
+<header id="header">
     <a href="index.html" class="logo-wrapper">
         <img src="circle.png" alt="Icon">
         <div class="logo-text">Routz & Beyond</div>
     </a>
-    <div class="header-tools">
-        <div class="menu-toggle" id="mobile-menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </div>
+    <nav class="nav-links">
+        <a href="#capabilities">Expertise</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
 
     <div class="nav-links-mobile" id="mobile-nav">
-        <a href="media-planning">Media Planning</a>
-        <a href="digital-marketing">Digital Marketing</a>
-        <a href="ooh">OOH Advertising</a>
-        <a href="event-sponsorship">Sponsorship</a>
+        <a href="#capabilities">Expertise</a>
+        <a href="#impact">Impact</a>
         <a href="#contact">Contact Us</a>
     </div>
 </header>
 
-    <nav class="service-nav">
-        <a href="event-sponsorship.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-award"></i><p>Sponsorship</p></div></a>
-        <a href="media-advertising.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-bullhorn"></i><p>Advertising</p></div></a>
-        <a href="print-media.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-newspaper"></i><p>Print Media</p></div></a>
-        <a href="events.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-calendar-check"></i><p>Events</p></div></a>
-        <a href="digital-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-laptop-code"></i><p>Digital</p></div></a>
-        <a href="ooh.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-city"></i><p>OOH</p></div></a>
-        <a href="retail.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-shop"></i><p>Retail</p></div></a>
-        <a href="direct-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-envelope-open-text"></i><p>Direct Mktg</p></div></a>
-        <a href="influencer-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-users-viewfinder"></i><p>Influencer</p></div></a>
-        <a href="in-film-placement.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-clapperboard"></i><p>In-Film</p></div></a>
-        <a href="media-planning.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-chart-line"></i><p>Planning</p></div></a>
-        <a href="live-placements.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-microphone-lines"></i><p>Live Place</p></div></a>
-    </nav>
+<!-- FIXED SERVICE NAV BAR -->
+<nav class="service-nav">
+    <a href="event-sponsorship.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-award"></i><p>Sponsorship</p></div></a>
+    <a href="media-advertising.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-bullhorn"></i><p>Advertising</p></div></a>
+    <a href="print-media.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-newspaper"></i><p>Print Media</p></div></a>
+    <a href="events.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-calendar-check"></i><p>Events</p></div></a>
+    <a href="digital-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-laptop-code"></i><p>Digital</p></div></a>
+    <a href="ooh.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-city"></i><p>OOH</p></div></a>
+    <a href="retail.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-shop"></i><p>Retail</p></div></a>
+    <a href="direct-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-envelope-open-text"></i><p>Direct Mktg</p></div></a>
+    <a href="influencer-marketing.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-users-viewfinder"></i><p>Influencer</p></div></a>
+    <a href="in-film-placement.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-clapperboard"></i><p>In-Film</p></div></a>
+    <a href="media-planning.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-chart-line"></i><p>Planning</p></div></a>
+    <a href="live-placements.html" class="nav-link"><div class="nav-item"><i class="fa-solid fa-microphone-lines"></i><p>Live Place</p></div></a>
+</nav>
 
-    <div class="hero-container">
-        <h1>Precision Media Planning. High-Impact Execution.</h1>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-meta">
+            <span><i class="fa-solid fa-circle"></i> India's Leading Integrated Media Agency</span>
+            <span><i class="fa-solid fa-circle"></i> Pan India Reach</span>
+        </div>
+        <h1>Precision Media <span class="outline">Planning.</span><br>High-Impact Execution.</h1>
         <div class="hero-sub">
             <span>Offline Advertising</span>
             <span>Digital Marketing</span>
-            <span>Sponorship</span>
+            <span>Sponsorship</span>
+        </div>
+        <div class="hero-bottom">
+            <p class="hero-desc">Strategic Hub • National Reach. We don't just buy media. We engineer brand visibility through practical and results-focused campaigns and uncompromising execution across offline and digital channels.</p>
+            <a href="#contact" class="cta-magnetic">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
-        <div class="mumbai-banner">
+        <!-- Mumbai Banner integrated into Hero Corporate Style -->
+        <div class="mumbai-banner reveal">
             <p>India's Leading Integrated Media Agency</p>
             <h2>Pan India</h2>
             <p>Strategic Hub • National Reach</p>
         </div>
     </div>
-<section class="about-section">
-    <div class="about-content">
-        <h2>Who We Are</h2>
-        <p>
-            Routz & Beyond is a premier <strong>integrated marketing and advertising agency in Mumbai</strong>,
-            dedicated to elevating brands through data-driven strategies. Since 2015, we have specialized in
-            crafting high-impact <strong>offline advertising, digital marketing campaigns, and strategic media planning</strong>.
-            Whether you are looking for pan-India media planning or creative brand solutions, our expert team
-            combines local market insights with global standards to deliver measurable ROI and unparalleled brand visibility.
-        </p>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+    <div class="marquee">
+        <div class="marquee-item">Media Planning</div>
+        <div class="marquee-item">Digital Innovation</div>
+        <div class="marquee-item">OOH Dominance</div>
+        <div class="marquee-item">Brand Strategy</div>
+        <div class="marquee-item">Media Planning</div>
+        <div class="marquee-item">Digital Innovation</div>
+        <div class="marquee-item">OOH Dominance</div>
+        <div class="marquee-item">Brand Strategy</div>
+    </div>
+</div>
+
+<!-- MANIFESTO / ABOUT -->
+<section class="manifesto reveal">
+    <div class="manifesto-grid">
+        <div class="section-label">[ 01 ] Who We Are</div>
+        <div>
+            <h2>Your Growth Partner <span>Since 2015</span></h2>
+            <p>
+                Routz & Beyond is a premier <strong>integrated marketing and advertising agency in Mumbai</strong>,
+                dedicated to elevating brands through data-driven strategies. Since 2015, we have specialized in
+                crafting high-impact <strong>offline advertising, digital marketing campaigns, and strategic media planning</strong>.
+                Whether you are looking for pan-India media planning or creative brand solutions, our expert team
+                combines local market insights with global standards to deliver measurable ROI and unparalleled brand visibility.
+            </p>
+        </div>
     </div>
 </section>
 
-    <section class="services-section">
-        <h2>Our Core Expertise</h2>
-        <div class="services-grid">
-            <a href="event-sponsorship.html" class="service-tile"><i class="fa-solid fa-award"></i><h3>Event Sponsorship</h3><p>Strategic brand integration and high-visibility partnerships.</p></a>
-            <a href="media-advertising.html" class="service-tile"><i class="fa-solid fa-bullhorn"></i><h3>Media Advertising</h3><p>Comprehensive campaign execution across multiple platforms.</p></a>
-            <a href="print-media.html" class="service-tile"><i class="fa-solid fa-newspaper"></i><h3>Print Media</h3><p>Targeted placements in premium newspapers and magazines.</p></a>
-            <a href="events.html" class="service-tile"><i class="fa-solid fa-calendar-check"></i><h3>Events</h3><p>End-to-end event management and experiential marketing.</p></a>
-            <a href="digital-marketing.html" class="service-tile"><i class="fa-solid fa-laptop-code"></i><h3>Digital Marketing</h3><p>Performance-driven SEO, SEM, and social media growth.</p></a>
-            <a href="ooh.html" class="service-tile"><i class="fa-solid fa-city"></i><h3>OOH</h3><p>Large-scale outdoor visibility and transit media.</p></a>
-            <a href="retail.html" class="service-tile"><i class="fa-solid fa-shop"></i><h3>Retail</h3><p>In-store branding and shopper marketing solutions.</p></a>
-            <a href="direct-marketing.html" class="service-tile"><i class="fa-solid fa-envelope-open-text"></i><h3>Direct Marketing</h3><p>Personalized communication strategies to drive conversions.</p></a>
-            <a href="influencer-marketing.html" class="service-tile"><i class="fa-solid fa-users-viewfinder"></i><h3>Influencer</h3><p>Connecting brands with authentic voices and audiences.</p></a>
-            <a href="in-film-placement.html" class="service-tile"><i class="fa-solid fa-clapperboard"></i><h3>In-Film</h3><p>Seamless brand integration within cinematic content.</p></a>
-            <a href="media-planning.html" class="service-tile"><i class="fa-solid fa-chart-line"></i><h3>Media Planning</h3><p>Data-backed strategies for optimal ROI on spend.</p></a>
-            <a href="live-placements.html" class="service-tile"><i class="fa-solid fa-microphone-lines"></i><h3>Live Placement</h3><p>Real-time brand exposure during live events and broadcasts.</p></a>
+<!-- CAPABILITIES -->
+<section class="capabilities" id="capabilities">
+    <div class="cap-container">
+        <div class="cap-header reveal">
+            <div class="section-label" style="color:#4ade80; border-color:rgba(255,255,255,0.2); margin-bottom: 40px;">[ 02 ] Our Core Expertise</div>
+            <h2>What We<br>Execute.</h2>
         </div>
-    </section>
 
-    <section class="progress-section">
-        <h2>Your Perfect Advertising Partner</h2>
-        <p class="intro-text">Routz & Beyond is forever expanding your brand with high quality service that combines creativity with value pricing. We play to win, with the primary goal of assisting our customers in promoting their successful brand campaigns.</p>
+        <!-- Changed to <a> tags for direct linking, removed large white visual box below entirely -->
+        <div class="cap-list reveal">
+            <a href="services/event-sponsorship.html" class="cap-item">
+                <h3>Event Sponsorship</h3>
+                <p>Strategic brand integration and high-visibility partnerships.</p>
+            </a>
+            <a href="services/media-advertising.html" class="cap-item">
+                <h3>Media Advertising</h3>
+                <p>Comprehensive campaign execution across multiple platforms.</p>
+            </a>
+            <a href="services/print-media.html" class="cap-item">
+                <h3>Print Media</h3>
+                <p>Targeted placements in premium newspapers and magazines.</p>
+            </a>
+            <a href="services/events.html" class="cap-item">
+                <h3>Events</h3>
+                <p>End-to-end event management and experiential marketing.</p>
+            </a>
+            <a href="services/digital-marketing.html" class="cap-item">
+                <h3>Digital Marketing</h3>
+                <p>Performance-driven SEO, SEM, and social media growth.</p>
+            </a>
+            <a href="services/ooh.html" class="cap-item">
+                <h3>OOH</h3>
+                <p>Large-scale outdoor visibility and transit media.</p>
+            </a>
+            <a href="services/retail.html" class="cap-item">
+                <h3>Retail</h3>
+                <p>In-store branding and shopper marketing solutions.</p>
+            </a>
+            <a href="services/direct-marketing.html" class="cap-item">
+                <h3>Direct Marketing</h3>
+                <p>Personalized communication strategies to drive conversions.</p>
+            </a>
+            <a href="services/influencer-marketing.html" class="cap-item">
+                <h3>Influencer</h3>
+                <p>Connecting brands with authentic voices and audiences.</p>
+            </a>
+            <a href="services/in-film-placement.html" class="cap-item">
+                <h3>In-Film</h3>
+                <p>Seamless brand integration within cinematic content.</p>
+            </a>
+            <a href="services/media-planning.html" class="cap-item">
+                <h3>Media Planning</h3>
+                <p>Data-backed strategies for optimal ROI on spend.</p>
+            </a>
+            <a href="services/live-placements.html" class="cap-item">
+                <h3>Live Placement</h3>
+                <p>Real-time brand exposure during live events and broadcasts.</p>
+            </a>
+        </div>
+    </div>
+</section>
 
-        <div class="progress-grid">
-            <div class="progress-item">
+<!-- IMPACT / STATS -->
+<section class="impact" id="impact">
+    <div class="impact-container">
+        <div class="impact-header reveal">
+            <h2>Your Perfect<br>Advertising Partner.</h2>
+            <p>Routz & Beyond is forever expanding your brand with high quality service that combines creativity with value pricing. We play to win, with the primary goal of assisting our customers in promoting their successful brand campaigns.</p>
+        </div>
+        <div class="stats-grid reveal">
+            <div class="stat-item">
                 <h3>10+</h3>
                 <p>Years of Experience</p>
             </div>
-            <div class="progress-item">
+            <div class="stat-item">
                 <h3>50+</h3>
                 <p>Campaigns Delivered</p>
             </div>
-            <div class="progress-item">
+            <div class="stat-item">
                 <h3>110M+</h3>
                 <p>Digital Impressions</p>
             </div>
-            <div class="progress-item">
+            <div class="stat-item">
                 <h3>50+</h3>
                 <p>Global Clients</p>
             </div>
         </div>
-    </section>
-
-    <section class="partners-section">
-        <h2>Our Trusted Partners</h2>
-        <div class="logo-slider">
-            <img src="colgate1.png" alt="Colgate">
-            <img src="hsbc1.png" alt="HSBC">
-            <img src="wipro1.png" alt="Wipro">
-            <img src="nestle1.png" alt="Nestle">
-            <img src="godrej1.png" alt="Godrej">
-            <img src="unilever1.png" alt="Unilever">
-            <img src="castrol1.png" alt="Castrol">
-            <img src="colgate1.png" alt="Colgate">
-            <img src="hsbc1.png" alt="HSBC">
-            <img src="wipro1.png" alt="Wipro">
-            <img src="nestle1.png" alt="Nestle">
-            <img src="godrej1.png" alt="Godrej">
-            <img src="unilever1.png" alt="Unilever">
-            <img src="castrol1.png" alt="Castrol">
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Request a Media Plan</h2>
-        <form action="https://formspree.io/f/xpqakygn" method="POST">
-            <input type="text" name="name" placeholder="Full Name / Company Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <div class="phone-group">
-                <select name="code">
-                    <option>+91</option>
-                    <option>+971</option>
-                </select>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-            </div>
-            <textarea name="message" rows="4" placeholder="Tell us about your brand goals..."></textarea>
-            <button type="submit">Send Request</button>
-        </form>
-    </section>
-
-    <div class="contact-strip">
-        <span>Routz and Beyond</span>
-        <span>•</span>
-        <span>©2016-2026</span>
     </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+    <h2>Our Trusted Partners</h2>
+    <div class="logo-slider">
+        <img src="images/colgate1.png" alt="Colgate"><img src="images/hsbc1.png" alt="HSBC"><img src="images/wipro1.png" alt="Wipro"><img src="images/nestle1.png" alt="Nestle"><img src="images/godrej1.png" alt="Godrej"><img src="images/unilever1.png" alt="Unilever"><img src="images/castrol1.png" alt="Castrol">
+        <img src="images/colgate1.png" alt="Colgate"><img src="images/hsbc1.png" alt="HSBC"><img src="images/wipro1.png" alt="Wipro"><img src="images/nestle1.png" alt="Nestle"><img src="images/godrej1.png" alt="Godrej"><img src="images/unilever1.png" alt="Unilever"><img src="images/castrol1.png" alt="Castrol">
+    </div>
+</section>
+
+<!-- CTA / CONTACT (Completely replaced with your requested layout) -->
+<section class="cta-section" id="contact">
+    <div class="cta-container">
+        <div class="cta-text reveal">
+            <div class="section-label" style="margin-bottom: 40px;">[ 03 ] Request a Media Plan</div>
+            <h2>Let's Build an <span>Empire.</span></h2>
+        </div>
+
+        <form class="corporate-form reveal" action="https://formspree.io/f/xpqakygn" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" required placeholder=" ">
+                <label>Full Name / Company Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" required placeholder=" ">
+                <label>Email Address</label>
+            </div>
+
+            <!-- Custom styled phone group matching corporate form -->
+            <div class="phone-group">
+                <div class="form-group">
+                    <select name="code" required>
+                        <option value="+91">+91</option>
+                        <option value="+971">+971</option>
+                    </select>
+                    <label style="top: -5px; font-size: 0.7rem; color: var(--primary-blue);">Code</label>
+                </div>
+                <div class="form-group" style="flex: 2;">
+                    <input type="tel" name="phone" required placeholder=" ">
+                    <label>Phone Number</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" rows="3" required placeholder=" "></textarea>
+                <label>Tell us about your brand goals...</label>
+            </div>
+            <button type="submit" class="submit-btn">Send Request <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div>© 2016-2026 Routz and Beyond</div>
+
+    </div>
+</footer>
+
 <script>
+    // SCROLL PROGRESS BAR
+    const scrollProgress = document.getElementById('scrollProgress');
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        // Progress Bar
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+
+        // Header BG
+        if (scrollTop > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+    });
+
+    // MOBILE MENU TOGGLE
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     const menuIcon = menuBtn.querySelector('i');
 
     menuBtn.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
-
-        // Optional: Change icon from Bars to X when open
-        if (mobileNav.classList.contains('active')) {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-xmark');
-        } else {
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
-        }
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-xmark');
     });
 
-    // Close menu when a link is clicked
     document.querySelectorAll('.nav-links-mobile a').forEach(link => {
         link.addEventListener('click', () => {
             mobileNav.classList.remove('active');
@@ -538,6 +542,18 @@
             menuIcon.classList.remove('fa-xmark');
         });
     });
+
+    // SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
